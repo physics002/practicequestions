@@ -4,88 +4,807 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physics Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary: #7e22ce;
+            --primary-dark: #6b21a8;
+            --gray-light: #f3f4f6;
+            --gray: #9ca3af;
+            --gray-dark: #4b5563;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --red: #ef4444;
+            --green: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--gray-light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .topic-selector {
+            margin-bottom: 2rem;
+        }
+        
+        .select-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        
+        select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            background-color: var(--white);
+            color: var(--text);
+            font-size: 1rem;
+            cursor: pointer;
+            appearance: none;
+        }
+        
+        .select-wrapper::after {
+            content: "▼";
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-dark);
+            pointer-events: none;
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.2);
+        }
+        
+        button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        button:disabled {
+            background-color: var(--gray);
+            cursor: not-allowed;
+        }
+        
+        .pro-badge {
+            background-color: var(--red);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        .quiz-container {
+            display: none;
+        }
+        
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-light);
+        }
+        
+        .quiz-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .quiz-progress {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        .question-container {
+            margin-bottom: 2rem;
+        }
+        
+        .question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .options {
+            display: grid;
+            gap: 0.75rem;
+        }
+        
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .option:hover {
+            background-color: var(--gray-light);
+        }
+        
+        .option.selected {
+            border-color: var(--primary);
+            background-color: rgba(126, 34, 206, 0.1);
+        }
+        
+        .option-prefix {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--gray-light);
+            border-radius: 50%;
+            margin-right: 1rem;
+            font-weight: 600;
+        }
+        
+        .selected .option-prefix {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .option-text {
+            flex: 1;
+        }
+        
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+        
+        .back-btn {
+            background-color: var(--gray-light);
+            color: var(--text);
+        }
+        
+        .back-btn:hover {
+            background-color: var(--gray);
+        }
+        
+        .results-container {
+            display: none;
+            text-align: center;
+        }
+        
+        .results-header {
+            margin-bottom: 2rem;
+        }
+        
+        .results-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .results-subtitle {
+            color: var(--text-light);
+        }
+        
+        .score {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1.5rem 0;
+        }
+        
+        .score-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .restart-btn {
+            background-color: var(--gray-light);
+            color: var(--text);
+        }
+        
+        .pro-tooltip {
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        /* Blurred pro options */
+        .pro-option {
+            filter: blur(1px);
+            opacity: 0.7;
+            position: relative;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="https://physicsquiz.github.io/homepage/" class="return-home-btn">Return to Homepage</a>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="container">
-        <h1>Physics Quiz</h1>
+    <div class="container">
+        <header>
+            <h1>Physics Quiz Challenge</h1>
+            <p class="description">Test your knowledge with our practice questions</p>
+        </header>
         
-        <!-- Quiz Controls -->
-        <section class="quiz-controls">
-            <select class="topic-select" id="topicSelect">
-                <option value="">Select a Topic</option>
-                <option value="Mechanics">Mechanics</option>
-                <option value="Electromagnetism">Electromagnetism</option>
-                <option value="Thermodynamics">Thermodynamics</option>
-            </select>
-
-            <div class="progress-container" id="progressContainer" style="display: none;">
-                <div class="progress-text" id="progressText">Questions Answered: 0/5</div>
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-        </section>
-
-        <!-- Quiz Content -->
-        <section id="quizContainer" class="quiz-container" style="display: none;"></section>
-
-        <!-- Donation Section -->
-        <section id="donate" class="donate-section">
-            <h2 class="donation-title">Support physics education and inspire the next generation of scientists!</h2>
+        <div id="topic-selector" class="topic-selector">
+            <h2>Select a Physics Topic</h2>
+            <p class="description">Choose a topic to start your 10-question quiz session</p>
             
-            <div class="donation-image-container">
-                <img src="https://example.com/physics-image.jpg"
-                     alt="Physics education"
-                     class="donation-image"
-                     loading="lazy">
+            <div class="select-wrapper">
+                <select id="topic-dropdown">
+                    <option value="" disabled selected>Select a topic...</option>
+                    <option value="mechanics">Mechanics</option>
+                    <option value="electromagnetism">Electromagnetism</option>
+                    <option value="thermodynamics">Thermodynamics</option>
+                    <option value="quantum" class="pro-option">Quantum Physics</option>
+                    <option value="relativity" class="pro-option">Theory of Relativity</option>
+                    <option value="optics" class="pro-option">Optics</option>
+                    <option value="nuclear" class="pro-option">Nuclear Physics</option>
+                    <option value="astrophysics" class="pro-option">Astrophysics</option>
+                </select>
             </div>
             
-            <p class="donation-description">
-                Help aspiring physicists access quality resources. Your donations can provide free tools and education for the future of science.
-            </p>
-        </section>
-    </main>
-
-    <!-- Fixed Elements -->
-    <div class="donate-banner">
-        <a href="https://physicsdonations.github.io/donate/" target="_blank" rel="noopener noreferrer">
-            PLEASE CLICK HERE TO DONATE
-        </a>
-    </div>
-
-    <!-- Telegram Popup -->
-    <div class="telegram-popup" id="telegramPopup" style="display: none;">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            
-            <div class="popup-header">
-                <img src="https://logos-world.net/wp-content/uploads/2021/03/Telegram-Symbol.png" 
-                     alt="Telegram Logo" 
-                     class="telegram-logo">
-                <h2>🚨 Limited Time Access! 🚨</h2>
+            <button id="start-quiz" disabled>Start Quiz</button>
+        </div>
+        
+        <div id="quiz-container" class="quiz-container">
+            <div class="quiz-header">
+                <div class="quiz-title" id="quiz-title">Mechanics Quiz</div>
+                <div class="quiz-progress">Question <span id="current-question">1</span> of <span id="total-questions">10</span></div>
             </div>
-
-            <div class="popup-body">
-                <p class="urgent-msg">⚠️ Our Telegram group is closing in less than 24 hours!</p>
-                <p>Join our exclusive Telegram channel to access:</p>
-                <ul>
-                    <li>📚 Free Video Lectures</li>
-                    <li>📝 Study Materials</li>
-                    <li>👥 Community Support</li>
-                    <li>🎯 Practice Problems</li>
-                </ul>
-                <a href="https://t.me/physics101" class="join-btn" target="_blank">
-                    Join Now Before It's Too Late!
-                </a>
+            
+            <div class="question-container">
+                <div id="question" class="question">Loading question...</div>
+                <div id="options" class="options">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="quiz-navigation">
+                <button id="back-btn" class="back-btn">Back to Topics</button>
+                <button id="next-btn">Next Question</button>
+            </div>
+        </div>
+        
+        <div id="results-container" class="results-container">
+            <div class="results-header">
+                <div class="results-title">Quiz Complete!</div>
+                <div class="results-subtitle" id="results-topic">Mechanics Quiz</div>
+            </div>
+            
+            <div class="score" id="score">7/10</div>
+            <div class="score-text" id="score-text">Great job! You scored 70%</div>
+            
+            <div class="actions">
+                <button id="restart-btn" class="restart-btn">Try Another Topic</button>
+                <button id="retry-btn">Retry This Topic</button>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    
+    <div id="pro-tooltip" class="pro-tooltip">UPGRADE TO PRO</div>
+    
+    <script>
+        // DOM Elements
+        const topicSelector = document.getElementById('topic-selector');
+        const quizContainer = document.getElementById('quiz-container');
+        const resultsContainer = document.getElementById('results-container');
+        const topicDropdown = document.getElementById('topic-dropdown');
+        const startQuizBtn = document.getElementById('start-quiz');
+        const backBtn = document.getElementById('back-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const restartBtn = document.getElementById('restart-btn');
+        const retryBtn = document.getElementById('retry-btn');
+        const quizTitle = document.getElementById('quiz-title');
+        const currentQuestionSpan = document.getElementById('current-question');
+        const totalQuestionsSpan = document.getElementById('total-questions');
+        const questionElement = document.getElementById('question');
+        const optionsElement = document.getElementById('options');
+        const resultsTopic = document.getElementById('results-topic');
+        const scoreElement = document.getElementById('score');
+        const scoreTextElement = document.getElementById('score-text');
+        const proTooltip = document.getElementById('pro-tooltip');
+        
+        // Quiz state
+        let currentTopic = '';
+        let questions = [];
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedAnswers = [];
+        
+        // Question banks for each topic
+        const questionBanks = {
+            mechanics: [
+                {
+                    question: "What is Newton's First Law of Motion?",
+                    options: ["Force equals mass times acceleration", "For every action, there is an equal and opposite reaction", "An object at rest stays at rest unless acted upon by an external force", "Energy cannot be created or destroyed"],
+                    answer: 2
+                },
+                {
+                    question: "What is the SI unit of force?",
+                    options: ["Watt", "Joule", "Newton", "Pascal"],
+                    answer: 2
+                },
+                {
+                    question: "Which of the following is a scalar quantity?",
+                    options: ["Velocity", "Acceleration", "Force", "Mass"],
+                    answer: 3
+                },
+                {
+                    question: "What is the law of conservation of momentum?",
+                    options: ["Momentum can be created but not destroyed", "Momentum can be destroyed but not created", "Momentum is always conserved in a closed system", "Momentum equals mass times velocity squared"],
+                    answer: 2
+                },
+                {
+                    question: "What is the formula for kinetic energy?",
+                    options: ["KE = mgh", "KE = mv", "KE = ½mv²", "KE = F·d"],
+                    answer: 2
+                },
+                {
+                    question: "Which of these is an example of simple harmonic motion?",
+                    options: ["A car accelerating on a straight road", "A ball rolling down a hill", "A pendulum swinging", "A rocket launching vertically"],
+                    answer: 2
+                },
+                {
+                    question: "What does the term 'torque' refer to?",
+                    options: ["Linear acceleration", "Rotational force", "Change in momentum", "Rate of energy transfer"],
+                    answer: 1
+                },
+                {
+                    question: "Which scientist is credited with the three laws of motion?",
+                    options: ["Galileo Galilei", "Albert Einstein", "Isaac Newton", "Johannes Kepler"],
+                    answer: 2
+                },
+                {
+                    question: "What is the formula for calculating work done?",
+                    options: ["W = m·a", "W = F·d", "W = ½mv²", "W = P·t"],
+                    answer: 1
+                },
+                {
+                    question: "What is the acceleration due to gravity on Earth (approximate value)?",
+                    options: ["5 m/s²", "9.8 m/s²", "12 m/s²", "15 m/s²"],
+                    answer: 1
+                },
+                {
+                    question: "What happens to the period of a pendulum if its length is doubled?",
+                    options: ["The period doubles", "The period is halved", "The period increases by a factor of √2", "The period increases by a factor of 4"],
+                    answer: 0
+                },
+                {
+                    question: "What is the principle of the conservation of mechanical energy?",
+                    options: ["Energy can be created but not destroyed", "Energy can be destroyed but not created", "The total mechanical energy remains constant in a closed system with no non-conservative forces", "Mechanical energy always increases over time"],
+                    answer: 2
+                },
+                {
+                    question: "Which of these is NOT a type of collision?",
+                    options: ["Elastic collision", "Inelastic collision", "Perfectly inelastic collision", "Momentum collision"],
+                    answer: 3
+                },
+                {
+                    question: "What is moment of inertia?",
+                    options: ["The resistance of an object to changes in its rotation", "The rate at which momentum changes", "The product of mass and velocity", "The rate of change of displacement"],
+                    answer: 0
+                },
+                {
+                    question: "What is the relationship between centripetal acceleration and velocity in circular motion?",
+                    options: ["a = v", "a = v²/r", "a = vr", "a = v/r"],
+                    answer: 1
+                }
+            ],
+            electromagnetism: [
+                {
+                    question: "What is Coulomb's Law?",
+                    options: ["The force between two charges is proportional to the product of the charges and inversely proportional to the square of the distance between them", "Electric field is proportional to charge", "Current equals voltage divided by resistance", "Magnetic field is proportional to current"],
+                    answer: 0
+                },
+                {
+                    question: "What is the SI unit of electric current?",
+                    options: ["Volt", "Ohm", "Ampere", "Coulomb"],
+                    answer: 2
+                },
+                {
+                    question: "What does Faraday's Law of Electromagnetic Induction state?",
+                    options: ["Current produces magnetic field", "Charges produce electric field", "The induced electromotive force is proportional to the rate of change of magnetic flux", "Like charges repel and unlike charges attract"],
+                    answer: 2
+                },
+                {
+                    question: "What is Ohm's Law?",
+                    options: ["P = IV", "V = IR", "Q = CV", "B = μI"],
+                    answer: 1
+                },
+                {
+                    question: "Which of these devices converts electrical energy into mechanical energy?",
+                    options: ["Generator", "Battery", "Capacitor", "Motor"],
+                    answer: 3
+                },
+                {
+                    question: "What is magnetic flux measured in?",
+                    options: ["Tesla", "Henry", "Weber", "Ampere"],
+                    answer: 2
+                },
+                {
+                    question: "What is the right-hand rule used for?",
+                    options: ["Determining electric field direction", "Calculating potential difference", "Determining magnetic field direction around a current-carrying wire", "Measuring resistance"],
+                    answer: 2
+                },
+                {
+                    question: "What does the term 'impedance' refer to in AC circuits?",
+                    options: ["Resistance only", "Capacitance only", "The opposition to current flow including resistance, capacitance, and inductance", "The rate of change of current"],
+                    answer: 2
+                },
+                {
+                    question: "What is Lenz's Law related to?",
+                    options: ["Direction of induced current", "Magnitude of electric field", "Calculation of resistance", "Speed of electromagnetic waves"],
+                    answer: 0
+                },
+                {
+                    question: "What is the speed of electromagnetic waves in a vacuum?",
+                    options: ["3 × 10⁸ m/s", "3 × 10⁶ m/s", "3 × 10⁴ m/s", "3 × 10² m/s"],
+                    answer: 0
+                },
+                {
+                    question: "Which of Maxwell's equations describes Gauss's law for electricity?",
+                    options: ["∇ × E = -∂B/∂t", "∇ × B = μ₀J + μ₀ε₀∂E/∂t", "∇ · E = ρ/ε₀", "∇ · B = 0"],
+                    answer: 2
+                },
+                {
+                    question: "What is the principle behind an electric transformer?",
+                    options: ["Coulomb's Law", "Ohm's Law", "Electromagnetic induction", "Conservation of charge"],
+                    answer: 2
+                },
+                {
+                    question: "What is the formula for electric potential energy between two point charges?",
+                    options: ["E = kq₁q₂/r", "E = q₁q₂/4πε₀r", "E = kq₁q₂r", "E = q₁q₂r²"],
+                    answer: 1
+                },
+                {
+                    question: "What is the difference between conductors and insulators?",
+                    options: ["Conductors have positive charge, insulators have negative charge", "Conductors allow heat transfer, insulators prevent heat transfer", "Conductors allow free movement of electric charge, insulators restrict it", "Conductors absorb light, insulators reflect light"],
+                    answer: 2
+                },
+                {
+                    question: "What is the relationship between magnetic field strength and distance from a long straight current-carrying wire?",
+                    options: ["B ∝ 1/r", "B ∝ 1/r²", "B ∝ r", "B ∝ r²"],
+                    answer: 0
+                }
+            ],
+            thermodynamics: [
+                {
+                    question: "What is the First Law of Thermodynamics?",
+                    options: ["Heat flows from hot to cold objects", "Energy cannot be created or destroyed, only transferred or converted", "Entropy of an isolated system always increases", "No process can convert heat completely into work"],
+                    answer: 1
+                },
+                {
+                    question: "What is the SI unit of temperature?",
+                    options: ["Fahrenheit", "Celsius", "Kelvin", "Rankine"],
+                    answer: 2
+                },
+                {
+                    question: "What does the Second Law of Thermodynamics state?",
+                    options: ["Energy is conserved in all processes", "Heat flows spontaneously from hot to cold bodies", "Entropy of the universe is constantly increasing", "All of the above"],
+                    answer: 2
+                },
+                {
+                    question: "What is the formula for heat transfer by conduction?",
+                    options: ["Q = mcΔT", "Q = hAΔT", "Q = kAΔT/d", "Q = σAT⁴"],
+                    answer: 2
+                },
+                {
+                    question: "What is the formula for calculating work done in a thermodynamic process?",
+                    options: ["W = PV", "W = nRT", "W = ∫P dV", "W = Q"],
+                    answer: 2
+                },
+                {
+                    question: "Which of these is an example of an adiabatic process?",
+                    options: ["Heating water in a kettle", "Air compression in a bicycle pump (occurring rapidly)", "Ice melting in a glass", "Iron bar cooling in ambient air"],
+                    answer: 1
+                },
+                {
+                    question: "What is thermal equilibrium?",
+                    options: ["When a system has maximum entropy", "When a system has minimum energy", "When two systems have the same temperature", "When heat flow equals work done"],
+                    answer: 2
+                },
+                {
+                    question: "What is the Zeroth Law of Thermodynamics?",
+                    options: ["If two systems are in thermal equilibrium with a third system, they are in thermal equilibrium with each other", "Energy is conserved in all thermodynamic processes", "Entropy of an isolated system never decreases", "It is impossible to reach absolute zero temperature"],
+                    answer: 0
+                },
+                {
+                    question: "Which law states that the internal energy of an ideal gas depends only on its temperature?",
+                    options: ["Boyle's Law", "Charles's Law", "Gay-Lussac's Law", "Joule's Law"],
+                    answer: 3
+                },
+                {
+                    question: "What is the efficiency formula for a heat engine?",
+                    options: ["η = 1 - Qc/Qh", "η = W/Qh", "η = Qh/Qc", "η = W/Qc"],
+                    answer: 1
+                },
+                {
+                    question: "What is the Third Law of Thermodynamics?",
+                    options: ["Energy is conserved in all processes", "Heat flows from hot to cold", "Entropy increases in all natural processes", "The entropy of a perfect crystal at absolute zero is zero"],
+                    answer: 3
+                },
+                {
+                    question: "What is the relationship between pressure, volume, and temperature for an ideal gas?",
+                    options: ["PV = nRT", "P = nRT/V", "T = PV/nR", "All of the above"],
+                    answer: 3
+                },
+                {
+                    question: "What is a reversible process in thermodynamics?",
+                    options: ["A process that can be undone", "A process that happens spontaneously", "A process that occurs infinitely slowly with no dissipation", "A process that releases heat"],
+                    answer: 2
+                },
+                {
+                    question: "What is the meaning of entropy in thermodynamics?",
+                    options: ["The total energy of a system", "The measure of a system's thermal energy", "The measure of a system's disorder or randomness", "The temperature of a system"],
+                    answer: 2
+                },
+                {
+                    question: "Which of these processes has the highest thermodynamic efficiency?",
+                    options: ["Isothermal process", "Adiabatic process", "Isobaric process", "Carnot cycle"],
+                    answer: 3
+                }
+            ]
+        };
+        
+        // Initialize the quiz
+        function init() {
+            // Enable/disable start button based on topic selection
+            topicDropdown.addEventListener('change', function() {
+                const selectedOption = this.options[this.selectedIndex];
+                currentTopic = this.value;
+                
+                if (currentTopic && !selectedOption.classList.contains('pro-option')) {
+                    startQuizBtn.disabled = false;
+                } else {
+                    startQuizBtn.disabled = true;
+                }
+            });
+            
+            // Handle PRO option selection
+            topicDropdown.addEventListener('mousedown', function(event) {
+                const select = this;
+                setTimeout(function() {
+                    const selectedOption = select.options[select.selectedIndex];
+                    if (selectedOption && selectedOption.classList.contains('pro-option')) {
+                        showProTooltip(event);
+                        // Reset selection to previous or empty
+                        select.value = currentTopic || "";
+                    }
+                }, 100);
+            });
+            
+            // Start quiz button click handler
+            startQuizBtn.addEventListener('click', startQuiz);
+            
+            // Back button click handler
+            backBtn.addEventListener('click', function() {
+                showTopicSelector();
+            });
+            
+            // Next button click handler
+            nextBtn.addEventListener('click', goToNextQuestion);
+            
+            // Restart button click handler
+            restartBtn.addEventListener('click', function() {
+                showTopicSelector();
+            });
+            
+            // Retry button click handler
+            retryBtn.addEventListener('click', function() {
+                startQuiz();
+            });
+        }
+        
+        // Start the quiz with the selected topic
+        function startQuiz() {
+            // Reset quiz state
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedAnswers = Array(10).fill(null);
+            
+            // Get 10 random questions for the selected topic
+            questions = getRandomQuestions(questionBanks[currentTopic], 10);
+            
+            // Update UI
+            quizTitle.textContent = getTopicName(currentTopic) + " Quiz";
+            totalQuestionsSpan.textContent = questions.length;
+            
+            // Show the quiz container
+            topicSelector.style.display = 'none';
+            quizContainer.style.display = 'block';
+            resultsContainer.style.display = 'none';
+            
+            // Load the first question
+            loadQuestion();
+        }
+        
+        // Load the current question
+        function loadQuestion() {
+            const question = questions[currentQuestionIndex];
+            currentQuestionSpan.textContent = currentQuestionIndex + 1;
+            
+            // Update question text
+            questionElement.textContent = question.question;
+            
+            // Clear previous options
+            optionsElement.innerHTML = '';
+            
+            // Add new options
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.className = 'option';
+                if (selectedAnswers[currentQuestionIndex] === index) {
+                    optionElement.classList.add('selected');
+                }
+                
+                optionElement.innerHTML = `
+                    <div class="option-prefix">${String.fromCharCode(65 + index)}</div>
+                    <div class="option-text">${option}</div>
+                `;
+                
+                optionElement.addEventListener('click', () => selectOption(index));
+                optionsElement.appendChild(optionElement);
+            });
+            
+            // Update button text based on question
+            if (currentQuestionIndex === questions.length - 1) {
+                nextBtn.textContent = 'Finish Quiz';
+            } else {
+                nextBtn.textContent = 'Next Question';
+            }
+        }
+        
+        // Select an option
+        function selectOption(optionIndex) {
+            selectedAnswers[currentQuestionIndex] = optionIndex;
+            
+            // Update UI to show selected option
+            const options = optionsElement.querySelectorAll('.option');
+            options.forEach((option, index) => {
+                if (index === optionIndex) {
+                    option.classList.add('selected');
+                } else {
+                    option.classList.remove('selected');
+                }
+            });
+        }
+        
+        // Go to next question or finish quiz
+        function goToNextQuestion() {
+            // Check if an option is selected
+            if (selectedAnswers[currentQuestionIndex] === null) {
+                alert('Please select an answer before proceeding.');
+                return;
+            }
+            
+            // Check if current answer is correct
+            if (selectedAnswers[currentQuestionIndex] === questions[currentQuestionIndex].answer) {
+                score++;
+            }
+            
+            // Go to next question or finish
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+        
+        // Finish quiz and show results
+        function finishQuiz() {
+            // Calculate score
+            const percentage = (score / questions.length) * 100;
+            
+            // Update results UI
+            resultsTopic.textContent = getTopicName(currentTopic) + " Quiz";
+            scoreElement.textContent = `${score}/${questions.length}`;
+            scoreTextElement.textContent = `You scored ${percentage}%`;
+            
+            // Show results
+            quizContainer.style.display = 'none';
+            resultsContainer.style.display = 'block';
+        }
+        
+        // Show topic selector
+        function showTopicSelector() {
+            topicSelector.style.display = 'block';
+            quizContainer.style.display = 'none';
+            resultsContainer.style.display = 'none';
+        }
+        
+        // Get random questions from a question bank
+        function getRandomQuestions(bank, count) {
+            const shuffled = [...bank].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+        
+        // Get topic name from topic code
+        function getTopicName(topic) {
+            switch(topic) {
+                case 'mechanics': return 'Mechanics';
+                case 'electromagnetism': return 'Electromagnetism';
+                case 'thermodynamics': return 'Thermodynamics';
+                default: return '';
+            }
+        }
+        
+        // Show PRO tooltip
+        function showProTooltip(event) {
+            proTooltip.style.left = `${event.pageX}px`;
+            proTooltip.style.top = `${event.pageY - 40}px`;
+            proTooltip.style.opacity = '1';
+            
+            setTimeout(() => {
+                proTooltip.style.opacity = '0';
+            }, 2000);
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', init);
+    </script>
 </body>
 </html>
