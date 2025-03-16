@@ -376,237 +376,3054 @@
         
         // Question banks for each topic
         const questionBanks = {
-            mechanics: [
-                {
-                    question: "What is Newton's First Law of Motion?",
-                    options: ["Force equals mass times acceleration", "For every action, there is an equal and opposite reaction", "An object at rest stays at rest unless acted upon by an external force", "Energy cannot be created or destroyed"],
-                    answer: 2
-                },
-                {
-                    question: "What is the SI unit of force?",
-                    options: ["Watt", "Joule", "Newton", "Pascal"],
-                    answer: 2
-                },
-                {
-                    question: "Which of the following is a scalar quantity?",
-                    options: ["Velocity", "Acceleration", "Force", "Mass"],
-                    answer: 3
-                },
-                {
-                    question: "What is the law of conservation of momentum?",
-                    options: ["Momentum can be created but not destroyed", "Momentum can be destroyed but not created", "Momentum is always conserved in a closed system", "Momentum equals mass times velocity squared"],
-                    answer: 2
-                },
-                {
-                    question: "What is the formula for kinetic energy?",
-                    options: ["KE = mgh", "KE = mv", "KE = ½mv²", "KE = F·d"],
-                    answer: 2
-                },
-                {
-                    question: "Which of these is an example of simple harmonic motion?",
-                    options: ["A car accelerating on a straight road", "A ball rolling down a hill", "A pendulum swinging", "A rocket launching vertically"],
-                    answer: 2
-                },
-                {
-                    question: "What does the term 'torque' refer to?",
-                    options: ["Linear acceleration", "Rotational force", "Change in momentum", "Rate of energy transfer"],
-                    answer: 1
-                },
-                {
-                    question: "Which scientist is credited with the three laws of motion?",
-                    options: ["Galileo Galilei", "Albert Einstein", "Isaac Newton", "Johannes Kepler"],
-                    answer: 2
-                },
-                {
-                    question: "What is the formula for calculating work done?",
-                    options: ["W = m·a", "W = F·d", "W = ½mv²", "W = P·t"],
-                    answer: 1
-                },
-                {
-                    question: "What is the acceleration due to gravity on Earth (approximate value)?",
-                    options: ["5 m/s²", "9.8 m/s²", "12 m/s²", "15 m/s²"],
-                    answer: 1
-                },
-                {
-                    question: "What happens to the period of a pendulum if its length is doubled?",
-                    options: ["The period doubles", "The period is halved", "The period increases by a factor of √2", "The period increases by a factor of 4"],
-                    answer: 0
-                },
-                {
-                    question: "What is the principle of the conservation of mechanical energy?",
-                    options: ["Energy can be created but not destroyed", "Energy can be destroyed but not created", "The total mechanical energy remains constant in a closed system with no non-conservative forces", "Mechanical energy always increases over time"],
-                    answer: 2
-                },
-                {
-                    question: "Which of these is NOT a type of collision?",
-                    options: ["Elastic collision", "Inelastic collision", "Perfectly inelastic collision", "Momentum collision"],
-                    answer: 3
-                },
-                {
-                    question: "What is moment of inertia?",
-                    options: ["The resistance of an object to changes in its rotation", "The rate at which momentum changes", "The product of mass and velocity", "The rate of change of displacement"],
-                    answer: 0
-                },
-                {
-                    question: "What is the relationship between centripetal acceleration and velocity in circular motion?",
-                    options: ["a = v", "a = v²/r", "a = vr", "a = v/r"],
-                    answer: 1
-                }
-            ],
-            electromagnetism: [
-                {
-                    question: "What is Coulomb's Law?",
-                    options: ["The force between two charges is proportional to the product of the charges and inversely proportional to the square of the distance between them", "Electric field is proportional to charge", "Current equals voltage divided by resistance", "Magnetic field is proportional to current"],
-                    answer: 0
-                },
-                {
-                    question: "What is the SI unit of electric current?",
-                    options: ["Volt", "Ohm", "Ampere", "Coulomb"],
-                    answer: 2
-                },
-                {
-                    question: "What does Faraday's Law of Electromagnetic Induction state?",
-                    options: ["Current produces magnetic field", "Charges produce electric field", "The induced electromotive force is proportional to the rate of change of magnetic flux", "Like charges repel and unlike charges attract"],
-                    answer: 2
-                },
-                {
-                    question: "What is Ohm's Law?",
-                    options: ["P = IV", "V = IR", "Q = CV", "B = μI"],
-                    answer: 1
-                },
-                {
-                    question: "Which of these devices converts electrical energy into mechanical energy?",
-                    options: ["Generator", "Battery", "Capacitor", "Motor"],
-                    answer: 3
-                },
-                {
-                    question: "What is magnetic flux measured in?",
-                    options: ["Tesla", "Henry", "Weber", "Ampere"],
-                    answer: 2
-                },
-                {
-                    question: "What is the right-hand rule used for?",
-                    options: ["Determining electric field direction", "Calculating potential difference", "Determining magnetic field direction around a current-carrying wire", "Measuring resistance"],
-                    answer: 2
-                },
-                {
-                    question: "What does the term 'impedance' refer to in AC circuits?",
-                    options: ["Resistance only", "Capacitance only", "The opposition to current flow including resistance, capacitance, and inductance", "The rate of change of current"],
-                    answer: 2
-                },
-                {
-                    question: "What is Lenz's Law related to?",
-                    options: ["Direction of induced current", "Magnitude of electric field", "Calculation of resistance", "Speed of electromagnetic waves"],
-                    answer: 0
-                },
-                {
-                    question: "What is the speed of electromagnetic waves in a vacuum?",
-                    options: ["3 × 10⁸ m/s", "3 × 10⁶ m/s", "3 × 10⁴ m/s", "3 × 10² m/s"],
-                    answer: 0
-                },
-                {
-                    question: "Which of Maxwell's equations describes Gauss's law for electricity?",
-                    options: ["∇ × E = -∂B/∂t", "∇ × B = μ₀J + μ₀ε₀∂E/∂t", "∇ · E = ρ/ε₀", "∇ · B = 0"],
-                    answer: 2
-                },
-                {
-                    question: "What is the principle behind an electric transformer?",
-                    options: ["Coulomb's Law", "Ohm's Law", "Electromagnetic induction", "Conservation of charge"],
-                    answer: 2
-                },
-                {
-                    question: "What is the formula for electric potential energy between two point charges?",
-                    options: ["E = kq₁q₂/r", "E = q₁q₂/4πε₀r", "E = kq₁q₂r", "E = q₁q₂r²"],
-                    answer: 1
-                },
-                {
-                    question: "What is the difference between conductors and insulators?",
-                    options: ["Conductors have positive charge, insulators have negative charge", "Conductors allow heat transfer, insulators prevent heat transfer", "Conductors allow free movement of electric charge, insulators restrict it", "Conductors absorb light, insulators reflect light"],
-                    answer: 2
-                },
-                {
-                    question: "What is the relationship between magnetic field strength and distance from a long straight current-carrying wire?",
-                    options: ["B ∝ 1/r", "B ∝ 1/r²", "B ∝ r", "B ∝ r²"],
-                    answer: 0
-                }
-            ],
-            thermodynamics: [
-                {
-                    question: "What is the First Law of Thermodynamics?",
-                    options: ["Heat flows from hot to cold objects", "Energy cannot be created or destroyed, only transferred or converted", "Entropy of an isolated system always increases", "No process can convert heat completely into work"],
-                    answer: 1
-                },
-                {
-                    question: "What is the SI unit of temperature?",
-                    options: ["Fahrenheit", "Celsius", "Kelvin", "Rankine"],
-                    answer: 2
-                },
-                {
-                    question: "What does the Second Law of Thermodynamics state?",
-                    options: ["Energy is conserved in all processes", "Heat flows spontaneously from hot to cold bodies", "Entropy of the universe is constantly increasing", "All of the above"],
-                    answer: 2
-                },
-                {
-                    question: "What is the formula for heat transfer by conduction?",
-                    options: ["Q = mcΔT", "Q = hAΔT", "Q = kAΔT/d", "Q = σAT⁴"],
-                    answer: 2
-                },
-                {
-                    question: "What is the formula for calculating work done in a thermodynamic process?",
-                    options: ["W = PV", "W = nRT", "W = ∫P dV", "W = Q"],
-                    answer: 2
-                },
-                {
-                    question: "Which of these is an example of an adiabatic process?",
-                    options: ["Heating water in a kettle", "Air compression in a bicycle pump (occurring rapidly)", "Ice melting in a glass", "Iron bar cooling in ambient air"],
-                    answer: 1
-                },
-                {
-                    question: "What is thermal equilibrium?",
-                    options: ["When a system has maximum entropy", "When a system has minimum energy", "When two systems have the same temperature", "When heat flow equals work done"],
-                    answer: 2
-                },
-                {
-                    question: "What is the Zeroth Law of Thermodynamics?",
-                    options: ["If two systems are in thermal equilibrium with a third system, they are in thermal equilibrium with each other", "Energy is conserved in all thermodynamic processes", "Entropy of an isolated system never decreases", "It is impossible to reach absolute zero temperature"],
-                    answer: 0
-                },
-                {
-                    question: "Which law states that the internal energy of an ideal gas depends only on its temperature?",
-                    options: ["Boyle's Law", "Charles's Law", "Gay-Lussac's Law", "Joule's Law"],
-                    answer: 3
-                },
-                {
-                    question: "What is the efficiency formula for a heat engine?",
-                    options: ["η = 1 - Qc/Qh", "η = W/Qh", "η = Qh/Qc", "η = W/Qc"],
-                    answer: 1
-                },
-                {
-                    question: "What is the Third Law of Thermodynamics?",
-                    options: ["Energy is conserved in all processes", "Heat flows from hot to cold", "Entropy increases in all natural processes", "The entropy of a perfect crystal at absolute zero is zero"],
-                    answer: 3
-                },
-                {
-                    question: "What is the relationship between pressure, volume, and temperature for an ideal gas?",
-                    options: ["PV = nRT", "P = nRT/V", "T = PV/nR", "All of the above"],
-                    answer: 3
-                },
-                {
-                    question: "What is a reversible process in thermodynamics?",
-                    options: ["A process that can be undone", "A process that happens spontaneously", "A process that occurs infinitely slowly with no dissipation", "A process that releases heat"],
-                    answer: 2
-                },
-                {
-                    question: "What is the meaning of entropy in thermodynamics?",
-                    options: ["The total energy of a system", "The measure of a system's thermal energy", "The measure of a system's disorder or randomness", "The temperature of a system"],
-                    answer: 2
-                },
-                {
-                    question: "Which of these processes has the highest thermodynamic efficiency?",
-                    options: ["Isothermal process", "Adiabatic process", "Isobaric process", "Carnot cycle"],
-                    answer: 3
-                }
-            ]
+           mechanics: [
+    {
+      "question": "Which law states that an object at rest stays at rest, and an object in motion stays in motion unless acted upon by an external force?",
+      "options": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Conservation of Energy"],
+      "answer": 0
+    },
+    {
+      "question": "The rate of change of momentum is directly proportional to the applied force. This is known as:",
+      "options": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Conservation of Momentum"],
+      "answer": 1
+    },
+    {
+      "question": "For every action, there is an equal and opposite reaction. This describes:",
+      "options": ["Newton's First Law", "Newton's Second Law", "Newton's Third Law", "Law of Conservation of Energy"],
+      "answer": 2
+    },
+    {
+      "question": "What is the SI unit of work and energy?",
+      "options": ["Newton", "Joule", "Watt", "Pascal"],
+      "answer": 1
+    },
+    {
+      "question": "Which principle states that the total momentum of an isolated system remains constant?",
+      "options": ["Conservation of Energy", "Conservation of Momentum", "Conservation of Mass", "Conservation of Angular Momentum"],
+      "answer": 1
+    },
+      {
+    "question": "What is the SI unit of force?",
+    "options": ["Newton", "Joule", "Watt", "Pascal"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of Newton’s First Law of Motion?",
+    "options": ["A book remains at rest on a table", "A car accelerating on a highway", "A rocket launching into space", "A ball falling due to gravity"],
+    "answer": 0
+},
+{
+    "question": "What is the formula for kinetic energy?",
+    "options": ["1/2 mv²", "mgh", "F = ma", "P = W/t"],
+    "answer": 0
+},
+{
+    "question": "What does Newton’s Second Law state?",
+    "options": ["Force equals mass times acceleration", "Every action has an equal and opposite reaction", "Objects at rest stay at rest", "Energy is conserved in a system"],
+    "answer": 0
+},
+{
+    "question": "Which quantity remains constant in an isolated system according to the law of conservation?",
+    "options": ["Momentum", "Velocity", "Acceleration", "Force"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of work in the SI system?",
+    "options": ["Joule", "Newton", "Watt", "Meter"],
+    "answer": 0
+},
+{
+    "question": "If a 10 kg object is moving at 5 m/s, what is its momentum?",
+    "options": ["50 kg·m/s", "25 kg·m/s", "10 kg·m/s", "5 kg·m/s"],
+    "answer": 0
+},
+{
+    "question": "What type of energy is stored in a compressed spring?",
+    "options": ["Elastic potential energy", "Kinetic energy", "Thermal energy", "Chemical energy"],
+    "answer": 0
+},
+{
+    "question": "What is the acceleration due to gravity on Earth?",
+    "options": ["9.8 m/s²", "8.9 m/s²", "10.8 m/s²", "12.2 m/s²"],
+    "answer": 0
+},
+{
+    "question": "What is torque?",
+    "options": ["A measure of rotational force", "The speed of an object", "A force acting on an object", "The energy stored in an object"],
+    "answer": 0
+},
+{
+    "question": "What is the moment of inertia dependent on?",
+    "options": ["Mass and distance from the axis", "Speed and velocity", "Only mass", "Only force"],
+    "answer": 0
+},
+{
+    "question": "Which type of collision conserves both momentum and kinetic energy?",
+    "options": ["Elastic collision", "Inelastic collision", "Perfectly inelastic collision", "Explosion"],
+    "answer": 0
+},
+{
+    "question": "What is the work done when a force of 10 N moves an object 5 meters in the direction of the force?",
+    "options": ["50 J", "5 J", "10 J", "25 J"],
+    "answer": 0
+},
+{
+    "question": "What is the power output if 100 J of work is done in 5 seconds?",
+    "options": ["20 W", "50 W", "10 W", "5 W"],
+    "answer": 0
+},
+{
+    "question": "Which type of motion does a pendulum exhibit?",
+    "options": ["Simple harmonic motion", "Projectile motion", "Rotational motion", "Uniform motion"],
+    "answer": 0
+},
+{
+    "question": "A car moving at 20 m/s stops in 5 seconds. What is its acceleration?",
+    "options": ["-4 m/s²", "-2 m/s²", "-5 m/s²", "-10 m/s²"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the maximum displacement from the equilibrium position in oscillatory motion?",
+    "options": ["Amplitude", "Frequency", "Period", "Wavelength"],
+    "answer": 0
+},
+{
+    "question": "If a force of 15 N is applied to an object of mass 3 kg, what is its acceleration?",
+    "options": ["5 m/s²", "3 m/s²", "10 m/s²", "15 m/s²"],
+    "answer": 0
+},
+{
+    "question": "Which law explains why a rocket moves forward when exhaust gases are expelled backward?",
+    "options": ["Newton’s Third Law", "Newton’s First Law", "Newton’s Second Law", "Law of Conservation of Energy"],
+    "answer": 0
+},
+{
+    "question": "What is the equation for angular velocity?",
+    "options": ["ω = θ/t", "F = ma", "KE = 1/2 mv²", "P = W/t"],
+    "answer": 0
+},
+      {
+    "question": "What does the term ‘inertia’ refer to in mechanics?",
+    "options": ["Resistance to change in motion", "The force acting on a body", "The acceleration of an object", "The velocity of an object"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a non-contact force?",
+    "options": ["Gravitational force", "Friction", "Tension", "Normal force"],
+    "answer": 0
+},
+{
+    "question": "What happens to an object in free fall in the absence of air resistance?",
+    "options": ["It accelerates at a constant rate", "It moves at constant velocity", "It decelerates", "It remains stationary"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of angular velocity?",
+    "options": ["Radians per second", "Meters per second", "Kilograms", "Joules"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between force, mass, and acceleration?",
+    "options": ["F = ma", "F = mv", "F = m/a", "F = ma²"],
+    "answer": 0
+},
+{
+    "question": "What kind of energy does a moving car have?",
+    "options": ["Kinetic energy", "Potential energy", "Thermal energy", "Chemical energy"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of an action-reaction pair?",
+    "options": ["A rocket pushes gases backward, and the rocket moves forward", "A book rests on a table", "A car is parked on a hill", "An apple falls from a tree"],
+    "answer": 0
+},
+{
+    "question": "What is the force exerted by a spring proportional to, according to Hooke's Law?",
+    "options": ["Displacement from equilibrium", "Mass of the object", "Velocity of the object", "Acceleration of the object"],
+    "answer": 0
+},
+{
+    "question": "What type of friction acts on an object that is not moving?",
+    "options": ["Static friction", "Kinetic friction", "Rolling friction", "Fluid friction"],
+    "answer": 0
+},
+{
+    "question": "What is the impulse-momentum theorem?",
+    "options": ["Impulse equals the change in momentum", "Momentum equals force times distance", "Impulse equals work done", "Momentum is always conserved"],
+    "answer": 0
+},
+{
+    "question": "Which force is responsible for keeping planets in orbit around the sun?",
+    "options": ["Gravitational force", "Electromagnetic force", "Nuclear force", "Frictional force"],
+    "answer": 0
+},
+{
+    "question": "Which law of motion explains why we feel pushed back when a car accelerates suddenly?",
+    "options": ["Newton’s First Law", "Newton’s Second Law", "Newton’s Third Law", "Law of Universal Gravitation"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the number of oscillations a wave completes in one second?",
+    "options": ["Frequency", "Amplitude", "Wavelength", "Velocity"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between work and energy?",
+    "options": ["Work is the transfer of energy", "Work is equal to power times time", "Energy is always greater than work", "Work and energy are unrelated"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of rotational motion?",
+    "options": ["A spinning wheel", "A car moving on a straight road", "A stone falling from a cliff", "A person walking forward"],
+    "answer": 0
+},
+{
+    "question": "What happens to the kinetic energy of an object when its speed doubles?",
+    "options": ["It quadruples", "It doubles", "It remains the same", "It triples"],
+    "answer": 0
+},
+{
+    "question": "What type of collision results in objects sticking together after impact?",
+    "options": ["Perfectly inelastic collision", "Elastic collision", "Partially elastic collision", "Explosive collision"],
+    "answer": 0
+},
+{
+    "question": "Which physical quantity is conserved in both elastic and inelastic collisions?",
+    "options": ["Momentum", "Kinetic energy", "Force", "Acceleration"],
+    "answer": 0
+},
+{
+    "question": "What is the purpose of a simple machine?",
+    "options": ["To reduce the effort needed to perform work", "To increase the weight of an object", "To change the direction of motion", "To create new energy"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a lever?",
+    "options": ["A seesaw", "A wheel", "A screw", "A pulley"],
+    "answer": 0
+},
+      {
+    "question": "Which of Newton's laws states that an object in motion stays in motion unless acted upon by an external force?",
+    "options": ["First Law", "Second Law", "Third Law", "Law of Gravitation"],
+    "answer": 0
+},
+{
+    "question": "What is the SI unit of force?",
+    "options": ["Newton", "Joule", "Watt", "Kilogram"],
+    "answer": 0
+},
+{
+    "question": "Which type of energy is stored in a stretched rubber band?",
+    "options": ["Elastic potential energy", "Kinetic energy", "Gravitational potential energy", "Thermal energy"],
+    "answer": 0
+},
+{
+    "question": "If an object’s acceleration is zero, what can be said about the forces acting on it?",
+    "options": ["They are balanced", "They are unbalanced", "There are no forces acting", "The object must be moving"],
+    "answer": 0
+},
+{
+    "question": "What force opposes the motion of an object moving through a fluid?",
+    "options": ["Drag force", "Tension force", "Normal force", "Magnetic force"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a scalar quantity?",
+    "options": ["Speed", "Velocity", "Acceleration", "Force"],
+    "answer": 0
+},
+{
+    "question": "What is the rate of change of velocity called?",
+    "options": ["Acceleration", "Speed", "Momentum", "Impulse"],
+    "answer": 0
+},
+{
+    "question": "What does a simple pendulum’s period depend on?",
+    "options": ["Length of the string", "Mass of the bob", "Amplitude of swing", "Tension in the string"],
+    "answer": 0
+},
+{
+    "question": "What type of motion does a car experience when it moves around a circular track at constant speed?",
+    "options": ["Uniform circular motion", "Linear motion", "Oscillatory motion", "Projectile motion"],
+    "answer": 0
+},
+{
+    "question": "What property of an object determines how much it resists changes in motion?",
+    "options": ["Mass", "Velocity", "Energy", "Work"],
+    "answer": 0
+},
+{
+    "question": "What is the work done when a force is applied perpendicular to the displacement?",
+    "options": ["Zero", "Positive", "Negative", "Infinite"],
+    "answer": 0
+},
+{
+    "question": "What does the area under a force vs. displacement graph represent?",
+    "options": ["Work done", "Power", "Velocity", "Acceleration"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of translational motion?",
+    "options": ["A moving car", "A spinning fan", "A rolling ball", "A vibrating string"],
+    "answer": 0
+},
+{
+    "question": "Which type of force acts at a distance without physical contact?",
+    "options": ["Gravitational force", "Frictional force", "Tension force", "Normal force"],
+    "answer": 0
+},
+{
+    "question": "What is the product of mass and velocity?",
+    "options": ["Momentum", "Acceleration", "Power", "Work"],
+    "answer": 0
+},
+{
+    "question": "What happens to an object’s momentum if no external force acts on it?",
+    "options": ["It remains constant", "It increases", "It decreases", "It becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which force is responsible for the motion of a car on a road?",
+    "options": ["Friction", "Gravity", "Tension", "Centripetal force"],
+    "answer": 0
+},
+{
+    "question": "What does torque depend on?",
+    "options": ["Force and distance from the axis", "Mass and velocity", "Speed and acceleration", "Power and time"],
+    "answer": 0
+},
+{
+    "question": "Which principle explains why a person moves backward when jumping off a boat?",
+    "options": ["Conservation of momentum", "Newton’s First Law", "Law of Gravitation", "Hooke’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which force acts towards the center in circular motion?",
+    "options": ["Centripetal force", "Centrifugal force", "Gravitational force", "Tension force"],
+    "answer": 0
+},
+      {
+    "question": "What happens to the kinetic energy of an object if its velocity doubles?",
+    "options": ["It quadruples", "It doubles", "It remains the same", "It halves"],
+    "answer": 0
+},
+{
+    "question": "Which of the following represents Newton’s Second Law of Motion?",
+    "options": ["F = ma", "F = mv", "F = mg", "F = d/t"],
+    "answer": 0
+},
+{
+    "question": "What force is required to keep an object moving at a constant velocity in space?",
+    "options": ["No force", "Gravity", "Friction", "Air resistance"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of power in the SI system?",
+    "options": ["Watt", "Joule", "Newton", "Pascal"],
+    "answer": 0
+},
+{
+    "question": "Which type of energy is possessed by an object due to its position?",
+    "options": ["Potential energy", "Kinetic energy", "Thermal energy", "Sound energy"],
+    "answer": 0
+},
+{
+    "question": "What is the effect of increasing the mass of an object on its acceleration if the force remains constant?",
+    "options": ["Acceleration decreases", "Acceleration increases", "Acceleration remains the same", "Acceleration becomes zero"],
+    "answer": 0
+},
+{
+    "question": "What type of collision conserves both momentum and kinetic energy?",
+    "options": ["Elastic collision", "Inelastic collision", "Perfectly inelastic collision", "Explosive collision"],
+    "answer": 0
+},
+{
+    "question": "What type of force is responsible for an object’s weight?",
+    "options": ["Gravitational force", "Frictional force", "Tension force", "Electromagnetic force"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a non-conservative force?",
+    "options": ["Friction", "Gravity", "Spring force", "Electric force"],
+    "answer": 0
+},
+{
+    "question": "What happens when two forces acting on an object are equal in magnitude but opposite in direction?",
+    "options": ["The object remains in equilibrium", "The object accelerates", "The object moves in a circular path", "The object gains kinetic energy"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a vector quantity?",
+    "options": ["Displacement", "Distance", "Speed", "Mass"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between work, force, and displacement?",
+    "options": ["Work = Force × Displacement × cos(θ)", "Work = Force × Displacement", "Work = Force ÷ Displacement", "Work = Force × Acceleration"],
+    "answer": 0
+},
+{
+    "question": "What happens to an object in free fall if air resistance is neglected?",
+    "options": ["It accelerates at 9.8 m/s²", "It moves with constant velocity", "It decelerates", "It stops moving"],
+    "answer": 0
+},
+{
+    "question": "What force is responsible for holding planets in orbit around the Sun?",
+    "options": ["Gravitational force", "Centripetal force", "Frictional force", "Magnetic force"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of rotational motion?",
+    "options": ["A spinning wheel", "A car moving on a straight road", "A falling apple", "A bouncing ball"],
+    "answer": 0
+},
+{
+    "question": "Which of these quantities is conserved in an inelastic collision?",
+    "options": ["Momentum", "Kinetic energy", "Potential energy", "Acceleration"],
+    "answer": 0
+},
+{
+    "question": "What is the resistance to rotational motion called?",
+    "options": ["Moment of inertia", "Torque", "Angular velocity", "Angular displacement"],
+    "answer": 0
+},
+{
+    "question": "Which of the following objects has the greatest inertia?",
+    "options": ["A truck", "A bicycle", "A football", "A pencil"],
+    "answer": 0
+},
+{
+    "question": "What is the name of the force exerted by a surface perpendicular to an object in contact with it?",
+    "options": ["Normal force", "Tension force", "Frictional force", "Centripetal force"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the force required to stretch or compress a spring?",
+    "options": ["Restoring force", "Frictional force", "Gravitational force", "Electrostatic force"],
+    "answer": 0
+},
+      {
+    "question": "What is the SI unit of force?",
+    "options": ["Newton", "Joule", "Watt", "Pascal"],
+    "answer": 0
+},
+{
+    "question": "What type of motion does a pendulum exhibit?",
+    "options": ["Oscillatory motion", "Rectilinear motion", "Rotational motion", "Random motion"],
+    "answer": 0
+},
+{
+    "question": "Which law states that for every action, there is an equal and opposite reaction?",
+    "options": ["Newton’s Third Law", "Newton’s First Law", "Newton’s Second Law", "Law of Gravitation"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between mass and weight?",
+    "options": ["Weight = Mass × Gravity", "Mass = Weight × Gravity", "Weight = Mass ÷ Gravity", "Mass = Weight ÷ Gravity"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of uniform circular motion?",
+    "options": ["A satellite orbiting Earth", "A car moving on a straight road", "A stone falling freely", "A person walking in a park"],
+    "answer": 0
+},
+{
+    "question": "What does the moment of inertia depend on?",
+    "options": ["Mass distribution", "Velocity", "Acceleration", "Temperature"],
+    "answer": 0
+},
+{
+    "question": "Which of these forces is responsible for keeping a car on a curved road?",
+    "options": ["Centripetal force", "Frictional force", "Gravitational force", "Tension force"],
+    "answer": 0
+},
+{
+    "question": "Which of these quantities is a scalar?",
+    "options": ["Speed", "Velocity", "Acceleration", "Displacement"],
+    "answer": 0
+},
+{
+    "question": "What happens to the acceleration of an object if the net force acting on it doubles?",
+    "options": ["It doubles", "It halves", "It remains the same", "It quadruples"],
+    "answer": 0
+},
+{
+    "question": "What does Hooke’s Law describe?",
+    "options": ["The relationship between force and extension in a spring", "The force of gravity between two masses", "The acceleration of a freely falling object", "The conservation of momentum"],
+    "answer": 0
+},
+{
+    "question": "Which of these is NOT a fundamental force in nature?",
+    "options": ["Frictional force", "Gravitational force", "Electromagnetic force", "Strong nuclear force"],
+    "answer": 0
+},
+{
+    "question": "What happens to the gravitational force between two objects if the distance between them doubles?",
+    "options": ["It decreases by a factor of four", "It doubles", "It remains the same", "It increases by a factor of four"],
+    "answer": 0
+},
+{
+    "question": "Which type of friction acts on a stationary object?",
+    "options": ["Static friction", "Kinetic friction", "Rolling friction", "Fluid friction"],
+    "answer": 0
+},
+{
+    "question": "What is the measure of how difficult it is to change the rotational motion of an object?",
+    "options": ["Moment of inertia", "Torque", "Angular velocity", "Angular acceleration"],
+    "answer": 0
+},
+{
+    "question": "Which quantity is conserved in an elastic collision?",
+    "options": ["Both momentum and kinetic energy", "Only momentum", "Only kinetic energy", "Neither momentum nor kinetic energy"],
+    "answer": 0
+},
+{
+    "question": "What is the force that opposes the motion of an object through a fluid?",
+    "options": ["Drag force", "Tension force", "Normal force", "Centripetal force"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best describes torque?",
+    "options": ["A measure of rotational force", "A measure of linear force", "A measure of mass", "A measure of displacement"],
+    "answer": 0
+},
+{
+    "question": "What is the angular equivalent of force?",
+    "options": ["Torque", "Moment of inertia", "Angular velocity", "Angular displacement"],
+    "answer": 0
+},
+{
+    "question": "Which of the following describes a situation where no work is done?",
+    "options": ["A person pushing against a wall", "A ball rolling down a hill", "A car accelerating on a highway", "A book falling off a table"],
+    "answer": 0
+},
+{
+    "question": "What is the effect of increasing the lever arm in a torque system?",
+    "options": ["It increases the torque", "It decreases the torque", "It has no effect on the torque", "It decreases the force required"],
+    "answer": 0
+},
+      {
+    "question": "What is the unit of work in the SI system?",
+    "options": ["Joule", "Newton", "Watt", "Pascal"],
+    "answer": 0
+},
+{
+    "question": "What is the acceleration due to gravity on Earth’s surface?",
+    "options": ["9.8 m/s²", "3.8 m/s²", "12.2 m/s²", "6.5 m/s²"],
+    "answer": 0
+},
+{
+    "question": "Which type of energy is associated with motion?",
+    "options": ["Kinetic energy", "Potential energy", "Chemical energy", "Thermal energy"],
+    "answer": 0
+},
+{
+    "question": "What quantity is defined as mass times velocity?",
+    "options": ["Momentum", "Force", "Acceleration", "Energy"],
+    "answer": 0
+},
+{
+    "question": "Which law states that an object in motion stays in motion unless acted upon by an external force?",
+    "options": ["Newton’s First Law", "Newton’s Second Law", "Newton’s Third Law", "Law of Gravitation"],
+    "answer": 0
+},
+{
+    "question": "What is the force that resists the motion of an object moving through the air?",
+    "options": ["Air resistance", "Tension", "Centripetal force", "Normal force"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT a vector quantity?",
+    "options": ["Temperature", "Velocity", "Acceleration", "Force"],
+    "answer": 0
+},
+{
+    "question": "What is the work done when a force is applied but there is no displacement?",
+    "options": ["Zero", "Positive", "Negative", "Infinite"],
+    "answer": 0
+},
+{
+    "question": "What is the formula for pressure?",
+    "options": ["Force ÷ Area", "Mass × Acceleration", "Work ÷ Time", "Force × Distance"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of an inelastic collision?",
+    "options": ["A car crash where the cars stick together", "A perfectly bouncy ball hitting the ground", "A pendulum swinging back and forth", "A gas molecule rebounding elastically"],
+    "answer": 0
+},
+{
+    "question": "What is the tendency of an object to resist a change in its state of motion?",
+    "options": ["Inertia", "Momentum", "Force", "Work"],
+    "answer": 0
+},
+{
+    "question": "Which factor does NOT affect the period of a simple pendulum?",
+    "options": ["Mass of the bob", "Length of the string", "Acceleration due to gravity", "Amplitude for small angles"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the rate of change of velocity?",
+    "options": ["Acceleration", "Momentum", "Force", "Speed"],
+    "answer": 0
+},
+{
+    "question": "In a vacuum, which object will hit the ground first when dropped simultaneously?",
+    "options": ["Both fall at the same rate", "The heavier object", "The lighter object", "The object with greater surface area"],
+    "answer": 0
+},
+{
+    "question": "Which principle explains how airplanes generate lift?",
+    "options": ["Bernoulli’s principle", "Pascal’s principle", "Archimedes’ principle", "Newton’s third law"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of power?",
+    "options": ["Watt", "Joule", "Newton", "Ampere"],
+    "answer": 0
+},
+{
+    "question": "Which of the following objects has the greatest moment of inertia?",
+    "options": ["A solid sphere", "A hollow cylinder", "A thin rod", "A small disk"],
+    "answer": 1
+},
+{
+    "question": "What type of friction occurs when an object is moving?",
+    "options": ["Kinetic friction", "Static friction", "Rolling friction", "Fluid friction"],
+    "answer": 0
+},
+{
+    "question": "What happens to the kinetic energy of an object if its velocity is doubled?",
+    "options": ["It quadruples", "It doubles", "It remains the same", "It triples"],
+    "answer": 0
+},
+{
+    "question": "Which of the following forces is a conservative force?",
+    "options": ["Gravitational force", "Friction", "Air resistance", "Tension"],
+    "answer": 0
+},
+      {
+    "question": "What is the SI unit of force?",
+    "options": ["Newton", "Joule", "Watt", "Pascal"],
+    "answer": 0
+},
+{
+    "question": "What is the formula for kinetic energy?",
+    "options": ["(1/2)mv²", "mv", "mgh", "F × d"],
+    "answer": 0
+},
+{
+    "question": "Which of Newton’s laws states that force is equal to mass times acceleration?",
+    "options": ["Second Law", "First Law", "Third Law", "Law of Universal Gravitation"],
+    "answer": 0
+},
+{
+    "question": "What force keeps planets in orbit around the sun?",
+    "options": ["Gravitational force", "Electromagnetic force", "Frictional force", "Nuclear force"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of torque?",
+    "options": ["Newton-meter", "Joule", "Watt", "Pascal"],
+    "answer": 0
+},
+{
+    "question": "Which type of motion occurs when an object moves in a circular path with constant speed?",
+    "options": ["Uniform circular motion", "Projectile motion", "Rotational motion", "Linear motion"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the distance traveled per unit time?",
+    "options": ["Speed", "Velocity", "Acceleration", "Momentum"],
+    "answer": 0
+},
+{
+    "question": "Which force is responsible for the repulsion between two like-charged particles?",
+    "options": ["Electromagnetic force", "Gravitational force", "Nuclear force", "Friction"],
+    "answer": 0
+},
+{
+    "question": "What is the term for a force that opposes motion between two surfaces in contact?",
+    "options": ["Friction", "Tension", "Normal force", "Gravitational force"],
+    "answer": 0
+},
+{
+    "question": "What is the force that acts on an object moving in a circular path and is directed toward the center?",
+    "options": ["Centripetal force", "Centrifugal force", "Normal force", "Friction"],
+    "answer": 0
+},
+{
+    "question": "What is the moment of a force?",
+    "options": ["Force × Perpendicular distance", "Mass × Velocity", "Force × Time", "Work ÷ Time"],
+    "answer": 0
+},
+{
+    "question": "Which law states that the total momentum of an isolated system remains constant?",
+    "options": ["Law of Conservation of Momentum", "Newton’s First Law", "Hooke’s Law", "Bernoulli’s Principle"],
+    "answer": 0
+},
+{
+    "question": "What happens to the potential energy of an object as it falls freely?",
+    "options": ["It decreases", "It increases", "It remains the same", "It doubles"],
+    "answer": 0
+},
+{
+    "question": "Which type of collision conserves both momentum and kinetic energy?",
+    "options": ["Elastic collision", "Inelastic collision", "Perfectly inelastic collision", "Explosion"],
+    "answer": 0
+},
+{
+    "question": "What is the force that prevents an object from sinking into a fluid?",
+    "options": ["Buoyant force", "Gravitational force", "Tension", "Friction"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between force, mass, and acceleration?",
+    "options": ["F = ma", "F = m/v", "F = mv", "F = mgh"],
+    "answer": 0
+},
+{
+    "question": "Which quantity remains constant in uniform circular motion?",
+    "options": ["Speed", "Velocity", "Acceleration", "Momentum"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of angular velocity?",
+    "options": ["Radians per second", "Meters per second", "Newton per meter", "Joules"],
+    "answer": 0
+},
+{
+    "question": "Which factor affects the gravitational potential energy of an object?",
+    "options": ["Height", "Speed", "Momentum", "Temperature"],
+    "answer": 0
+},
+{
+    "question": "Which force is responsible for holding the nucleus of an atom together?",
+    "options": ["Nuclear force", "Gravitational force", "Electromagnetic force", "Frictional force"],
+    "answer": 0
+},
+      {
+    "question": "What is the rate of change of velocity called?",
+    "options": ["Acceleration", "Speed", "Momentum", "Force"],
+    "answer": 0
+},
+{
+    "question": "Which of Newton’s laws states that an object at rest stays at rest unless acted upon by an external force?",
+    "options": ["First Law", "Second Law", "Third Law", "Law of Universal Gravitation"],
+    "answer": 0
+},
+{
+    "question": "Which force acts perpendicular to the surface of an object in contact with a surface?",
+    "options": ["Normal force", "Frictional force", "Tension", "Gravitational force"],
+    "answer": 0
+},
+{
+    "question": "Which quantity is the product of mass and velocity?",
+    "options": ["Momentum", "Acceleration", "Work", "Force"],
+    "answer": 0
+},
+{
+    "question": "What is the resistance of an object to changes in its motion?",
+    "options": ["Inertia", "Friction", "Tension", "Elasticity"],
+    "answer": 0
+},
+{
+    "question": "What does Hooke’s Law relate to?",
+    "options": ["Elastic force and displacement", "Pressure and volume", "Current and resistance", "Force and acceleration"],
+    "answer": 0
+},
+{
+    "question": "What is the SI unit of power?",
+    "options": ["Watt", "Joule", "Newton", "Pascal"],
+    "answer": 0
+},
+{
+    "question": "Which principle states that an increase in the speed of a fluid occurs with a decrease in pressure?",
+    "options": ["Bernoulli’s Principle", "Pascal’s Law", "Archimedes' Principle", "Boyle’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which force opposes the motion of an object moving through a fluid?",
+    "options": ["Drag force", "Tension", "Normal force", "Centripetal force"],
+    "answer": 0
+},
+{
+    "question": "Which physical quantity is measured in Pascal?",
+    "options": ["Pressure", "Energy", "Work", "Power"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the force exerted per unit area?",
+    "options": ["Pressure", "Density", "Momentum", "Work"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of simple harmonic motion?",
+    "options": ["A pendulum swinging", "A car moving on a straight road", "A stone rolling down a hill", "A rocket taking off"],
+    "answer": 0
+},
+{
+    "question": "Which energy transformation occurs when a stretched rubber band is released?",
+    "options": ["Potential to kinetic", "Kinetic to potential", "Chemical to thermal", "Electrical to mechanical"],
+    "answer": 0
+},
+{
+    "question": "Which law states that every action has an equal and opposite reaction?",
+    "options": ["Newton’s Third Law", "Newton’s First Law", "Newton’s Second Law", "Law of Conservation of Energy"],
+    "answer": 0
+},
+{
+    "question": "What is the point at which the entire weight of an object appears to act?",
+    "options": ["Center of gravity", "Equilibrium point", "Pivot point", "Fulcrum"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the maximum displacement from the equilibrium position in oscillatory motion?",
+    "options": ["Amplitude", "Wavelength", "Frequency", "Phase"],
+    "answer": 0
+},
+{
+    "question": "Which force acts to restore an object to its equilibrium position?",
+    "options": ["Restoring force", "Frictional force", "Normal force", "Tension"],
+    "answer": 0
+},
+{
+    "question": "What is the product of force and displacement in the direction of force?",
+    "options": ["Work", "Power", "Energy", "Momentum"],
+    "answer": 0
+},
+{
+    "question": "Which force prevents objects from slipping on a surface?",
+    "options": ["Friction", "Gravity", "Centripetal force", "Normal force"],
+    "answer": 0
+},
+{
+    "question": "What type of energy does an object possess due to its motion?",
+    "options": ["Kinetic energy", "Potential energy", "Thermal energy", "Chemical energy"],
+    "answer": 0
+},
+      {
+    "question": "What is the unit of force in the SI system?",
+    "options": ["Newton", "Joule", "Watt", "Pascal"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT a vector quantity?",
+    "options": ["Speed", "Velocity", "Force", "Acceleration"],
+    "answer": 0
+},
+{
+    "question": "What is the formula for kinetic energy?",
+    "options": ["1/2 mv²", "mgh", "F = ma", "P = W/t"],
+    "answer": 0
+},
+{
+    "question": "Which force keeps planets in orbit around the sun?",
+    "options": ["Gravitational force", "Magnetic force", "Electrostatic force", "Centrifugal force"],
+    "answer": 0
+},
+{
+    "question": "Which physical law explains why a rocket moves forward when gas is expelled backward?",
+    "options": ["Newton’s Third Law", "Newton’s First Law", "Newton’s Second Law", "Law of Universal Gravitation"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the opposition to motion between two surfaces in contact?",
+    "options": ["Friction", "Tension", "Gravity", "Momentum"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT an example of work being done?",
+    "options": ["Holding a book", "Lifting a box", "Pushing a car", "Kicking a football"],
+    "answer": 0
+},
+{
+    "question": "Which force is responsible for circular motion?",
+    "options": ["Centripetal force", "Gravitational force", "Normal force", "Frictional force"],
+    "answer": 0
+},
+{
+    "question": "What is the SI unit of momentum?",
+    "options": ["kg·m/s", "Newton", "Joule", "Watt"],
+    "answer": 0
+},
+{
+    "question": "What is the work done when a force of 10N moves an object 5m in the direction of the force?",
+    "options": ["50 J", "5 J", "10 J", "15 J"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best describes torque?",
+    "options": ["A measure of rotational force", "A measure of linear force", "The rate of change of velocity", "The force acting on a body due to gravity"],
+    "answer": 0
+},
+{
+    "question": "Which of the following will increase the gravitational force between two objects?",
+    "options": ["Increasing mass", "Increasing distance", "Decreasing mass", "Removing air resistance"],
+    "answer": 0
+},
+{
+    "question": "What happens to the acceleration of an object if the net force acting on it is doubled?",
+    "options": ["It doubles", "It remains the same", "It halves", "It decreases exponentially"],
+    "answer": 0
+},
+{
+    "question": "What is the potential energy of a 2 kg object at a height of 10m? (g = 9.8 m/s²)",
+    "options": ["196 J", "20 J", "98 J", "9.8 J"],
+    "answer": 0
+},
+{
+    "question": "Which type of energy is associated with an object’s height?",
+    "options": ["Gravitational potential energy", "Kinetic energy", "Elastic potential energy", "Chemical energy"],
+    "answer": 0
+},
+{
+    "question": "Which factor does NOT affect the acceleration of an object in free fall?",
+    "options": ["Mass", "Gravity", "Air resistance", "Height of fall"],
+    "answer": 0
+},
+{
+    "question": "What is the quantity that describes the amount of matter in an object?",
+    "options": ["Mass", "Weight", "Density", "Volume"],
+    "answer": 0
+},
+{
+    "question": "Which quantity remains constant for an object in uniform circular motion?",
+    "options": ["Speed", "Velocity", "Acceleration", "Momentum"],
+    "answer": 0
+},
+{
+    "question": "What type of collision conserves both momentum and kinetic energy?",
+    "options": ["Elastic collision", "Inelastic collision", "Perfectly inelastic collision", "Explosion collision"],
+    "answer": 0
+},
+{
+    "question": "Which law states that the pressure of a fluid decreases as its velocity increases?",
+    "options": ["Bernoulli’s Principle", "Pascal’s Law", "Archimedes' Principle", "Boyle’s Law"],
+    "answer": 0
+},
+      {
+    "question": "What is the term for the resistance to changes in motion?",
+    "options": ["Inertia", "Friction", "Velocity", "Momentum"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a non-contact force?",
+    "options": ["Gravitational force", "Friction", "Tension", "Normal force"],
+    "answer": 0
+},
+{
+    "question": "Which principle explains the behavior of fluids in motion, relating velocity and pressure?",
+    "options": ["Bernoulli’s Principle", "Archimedes' Principle", "Pascal’s Law", "Boyle’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a vector quantity?",
+    "options": ["Velocity", "Speed", "Temperature", "Time"],
+    "answer": 0
+},
+{
+    "question": "The work-energy theorem states that the work done on an object is equal to its change in:",
+    "options": ["Kinetic energy", "Potential energy", "Momentum", "Force"],
+    "answer": 0
+},
+{
+    "question": "What is the velocity of an object when it is at rest?",
+    "options": ["Zero", "Constant", "Increasing", "Decreasing"],
+    "answer": 0
+},
+{
+    "question": "What type of energy is stored in an object due to its position?",
+    "options": ["Potential energy", "Kinetic energy", "Thermal energy", "Sound energy"],
+    "answer": 0
+},
+{
+    "question": "What is the formula for the gravitational force between two objects?",
+    "options": ["F = G(m1 * m2) / r²", "F = ma", "F = mv²/r", "F = P/t"],
+    "answer": 0
+},
+{
+    "question": "Which of the following energy transformations occurs when a ball is thrown into the air?",
+    "options": ["Kinetic energy to potential energy", "Potential energy to kinetic energy", "Thermal energy to kinetic energy", "Chemical energy to mechanical energy"],
+    "answer": 0
+},
+{
+    "question": "What is the effect of increasing the mass of an object on its momentum?",
+    "options": ["Momentum increases", "Momentum decreases", "Momentum remains the same", "Momentum becomes zero"],
+    "answer": 0
+},
+{
+    "question": "The force required to stretch or compress a spring is proportional to the displacement. This is known as:",
+    "options": ["Hooke’s Law", "Newton’s Third Law", "Coulomb’s Law", "Faraday’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which of the following forces is acting on an object moving in a circular path?",
+    "options": ["Centripetal force", "Frictional force", "Gravitational force", "Tension force"],
+    "answer": 0
+},
+{
+    "question": "In a closed system, which quantity is conserved during a collision?",
+    "options": ["Momentum", "Kinetic energy", "Potential energy", "All of the above"],
+    "answer": 0
+},
+{
+    "question": "The ability of a material to return to its original shape after deformation is known as:",
+    "options": ["Elasticity", "Plasticity", "Brittleness", "Ductility"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of pressure in the SI system?",
+    "options": ["Pascal", "Newton", "Joule", "Watt"],
+    "answer": 0
+},
+{
+    "question": "In a vacuum, objects of different masses will fall at the same rate due to the absence of:",
+    "options": ["Air resistance", "Gravity", "Momentum", "Friction"],
+    "answer": 0
+},
+{
+    "question": "Which of the following terms refers to the rate of change of velocity?",
+    "options": ["Acceleration", "Speed", "Momentum", "Force"],
+    "answer": 0
+},
+{
+    "question": "Which law states that for every action, there is an equal and opposite reaction?",
+    "options": ["Newton’s Third Law", "Newton’s First Law", "Newton’s Second Law", "Law of Universal Gravitation"],
+    "answer": 0
+},
+{
+    "question": "In which type of collision is kinetic energy not conserved?",
+    "options": ["Inelastic collision", "Elastic collision", "Perfectly elastic collision", "Elastic potential collision"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is the energy stored in an object due to its deformation?",
+    "options": ["Elastic potential energy", "Kinetic energy", "Gravitational potential energy", "Thermal energy"],
+    "answer": 0
+}
+  ],
+  
+  electromagnetism: [
+    {
+      "question": "Coulomb's law describes the force between what kinds of particles?",
+      "options": ["Charged particles", "Neutrons", "Gravitons", "Photons"],
+      "answer": 0
+    },
+    {
+      "question": "What is the unit of electrical potential difference?",
+      "options": ["Ampere", "Watt", "Volt", "Ohm"],
+      "answer": 2
+    },
+    {
+      "question": "Ohm's Law states that current is equal to:",
+      "options": ["Resistance divided by voltage", "Voltage multiplied by resistance", "Voltage divided by resistance", "Power divided by voltage"],
+      "answer": 2
+    },
+    {
+      "question": "Which scientist's equations unified electricity and magnetism into a single theory?",
+      "options": ["Einstein", "Newton", "Maxwell", "Faraday"],
+      "answer": 2
+    },
+    {
+      "question": "What phenomenon occurs when a changing magnetic field induces an electric current?",
+      "options": ["Electromagnetic radiation", "Magnetic resonance", "Static electricity", "Electromagnetic induction"],
+      "answer": 3
+    },
+      {
+    "question": "What is the SI unit of electric charge?",
+    "options": ["Coulomb", "Volt", "Ampere", "Ohm"],
+    "answer": 0
+},
+{
+    "question": "Which fundamental force is responsible for electric and magnetic interactions?",
+    "options": ["Electromagnetic force", "Gravitational force", "Strong nuclear force", "Weak nuclear force"],
+    "answer": 0
+},
+{
+    "question": "What type of charge does a proton have?",
+    "options": ["Positive", "Negative", "Neutral", "None"],
+    "answer": 0
+},
+{
+    "question": "What happens to the force between two charges if the distance between them is doubled?",
+    "options": ["Decreases by a factor of 4", "Doubles", "Remains the same", "Increases by a factor of 4"],
+    "answer": 0
+},
+{
+    "question": "Which law describes the force between two electric charges?",
+    "options": ["Coulomb’s Law", "Ohm’s Law", "Faraday’s Law", "Newton’s Law"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between voltage, current, and resistance according to Ohm’s Law?",
+    "options": ["V = IR", "V = I/R", "I = VR", "R = IV"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT a conductor of electricity?",
+    "options": ["Rubber", "Copper", "Aluminum", "Gold"],
+    "answer": 0
+},
+{
+    "question": "What does a moving charge produce?",
+    "options": ["Magnetic field", "Electric field", "Gravitational field", "Thermal energy"],
+    "answer": 0
+},
+{
+    "question": "Which scientist discovered electromagnetic induction?",
+    "options": ["Michael Faraday", "James Clerk Maxwell", "Albert Einstein", "Nikola Tesla"],
+    "answer": 0
+},
+{
+    "question": "Which of the following devices converts electrical energy into mechanical energy?",
+    "options": ["Electric motor", "Transformer", "Generator", "Capacitor"],
+    "answer": 0
+},
+{
+    "question": "What is the function of a transformer?",
+    "options": ["To change voltage", "To generate electricity", "To store charge", "To convert AC to DC"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a property of magnetic field lines?",
+    "options": ["They form closed loops", "They start from south and end at north", "They intersect each other", "They do not exist in a vacuum"],
+    "answer": 0
+},
+{
+    "question": "Which type of current is used in household electrical wiring?",
+    "options": ["Alternating current (AC)", "Direct current (DC)", "Pulsating current", "Static current"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of magnetic field strength?",
+    "options": ["Tesla", "Gauss", "Newton", "Volt"],
+    "answer": 0
+},
+{
+    "question": "What is the function of a capacitor in a circuit?",
+    "options": ["To store electrical energy", "To increase resistance", "To amplify signals", "To convert energy into motion"],
+    "answer": 0
+},
+{
+    "question": "Which component is used to control the flow of current in a circuit?",
+    "options": ["Resistor", "Capacitor", "Transformer", "Inductor"],
+    "answer": 0
+},
+{
+    "question": "What type of waves are electromagnetic waves?",
+    "options": ["Transverse", "Longitudinal", "Mechanical", "Standing"],
+    "answer": 0
+},
+{
+    "question": "Which of the following electromagnetic waves has the highest frequency?",
+    "options": ["Gamma rays", "Microwaves", "Infrared", "Radio waves"],
+    "answer": 0
+},
+{
+    "question": "Which scientist formulated the equations that describe electromagnetism?",
+    "options": ["James Clerk Maxwell", "Isaac Newton", "Albert Einstein", "Nikola Tesla"],
+    "answer": 0
+},
+{
+    "question": "Which device converts mechanical energy into electrical energy?",
+    "options": ["Generator", "Motor", "Capacitor", "Inductor"],
+    "answer": 0
+},
+      {
+    "question": "Which of the following laws states that the line integral of a magnetic field around a closed loop is proportional to the total current passing through it?",
+    "options": ["Ampere’s Law", "Faraday’s Law", "Lenz’s Law", "Gauss’s Law"],
+    "answer": 0
+},
+{
+    "question": "What happens to the capacitance if the distance between capacitor plates is increased?",
+    "options": ["Decreases", "Increases", "Remains the same", "Becomes infinite"],
+    "answer": 0
+},
+{
+    "question": "What is the principle behind the working of a transformer?",
+    "options": ["Electromagnetic induction", "Electrostatic attraction", "Resistance heating", "Photoelectric effect"],
+    "answer": 0
+},
+{
+    "question": "What type of current does a battery produce?",
+    "options": ["Direct current (DC)", "Alternating current (AC)", "Pulsating current", "Static current"],
+    "answer": 0
+},
+{
+    "question": "Which fundamental force is responsible for the interaction between charged particles?",
+    "options": ["Electromagnetic force", "Gravitational force", "Weak nuclear force", "Strong nuclear force"],
+    "answer": 0
+},
+{
+    "question": "Which of the following devices is used to measure electric current?",
+    "options": ["Ammeter", "Voltmeter", "Galvanometer", "Ohmmeter"],
+    "answer": 0
+},
+{
+    "question": "What does a solenoid produce when current flows through it?",
+    "options": ["Magnetic field", "Electric field", "Mechanical force", "Heat"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT a part of Maxwell’s equations?",
+    "options": ["Ohm’s Law", "Gauss’s Law", "Faraday’s Law", "Ampere’s Law"],
+    "answer": 0
+},
+{
+    "question": "What happens to the resistance of a conductor when temperature increases?",
+    "options": ["Increases", "Decreases", "Remains the same", "Becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which material is commonly used in transformers for core construction?",
+    "options": ["Iron", "Copper", "Aluminum", "Silver"],
+    "answer": 0
+},
+{
+    "question": "What is the primary purpose of a fuse in an electrical circuit?",
+    "options": ["To prevent excessive current flow", "To increase voltage", "To store charge", "To amplify signals"],
+    "answer": 0
+},
+{
+    "question": "Which scientist developed the right-hand rule for determining the direction of magnetic force?",
+    "options": ["John Ambrose Fleming", "Michael Faraday", "James Clerk Maxwell", "Nikola Tesla"],
+    "answer": 0
+},
+{
+    "question": "What kind of field surrounds a charged particle at rest?",
+    "options": ["Electric field", "Magnetic field", "Gravitational field", "Thermal field"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best describes the function of a diode?",
+    "options": ["Allows current to flow in one direction", "Stores electrical energy", "Controls resistance", "Measures voltage"],
+    "answer": 0
+},
+{
+    "question": "What type of energy is stored in an inductor?",
+    "options": ["Magnetic energy", "Electrical energy", "Thermal energy", "Kinetic energy"],
+    "answer": 0
+},
+{
+    "question": "Which device is used to convert AC to DC?",
+    "options": ["Rectifier", "Transformer", "Inductor", "Capacitor"],
+    "answer": 0
+},
+{
+    "question": "What happens to the induced EMF if the rate of change of magnetic flux increases?",
+    "options": ["Increases", "Decreases", "Remains the same", "Becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which rule helps determine the direction of induced current in a conductor?",
+    "options": ["Lenz’s Law", "Ohm’s Law", "Gauss’s Law", "Coulomb’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which component opposes changes in current in a circuit?",
+    "options": ["Inductor", "Resistor", "Capacitor", "Diode"],
+    "answer": 0
+},
+{
+    "question": "What is the speed of electromagnetic waves in a vacuum?",
+    "options": ["3 × 10⁸ m/s", "3 × 10⁶ m/s", "3 × 10⁴ m/s", "3 × 10² m/s"],
+    "answer": 0
+},
+      {
+    "question": "Which of the following equations represents Gauss’s Law for electricity?",
+    "options": ["∇·E = ρ/ε₀", "∇×E = -∂B/∂t", "∇·B = 0", "∇×B = μ₀J + μ₀ε₀∂E/∂t"],
+    "answer": 0
+},
+{
+    "question": "Which scientist formulated the theory of electromagnetism using a set of four equations?",
+    "options": ["James Clerk Maxwell", "Michael Faraday", "André-Marie Ampère", "Hans Christian Ørsted"],
+    "answer": 0
+},
+{
+    "question": "What is the SI unit of magnetic flux?",
+    "options": ["Weber", "Tesla", "Henry", "Farad"],
+    "answer": 0
+},
+{
+    "question": "Which rule determines the direction of force acting on a current-carrying conductor in a magnetic field?",
+    "options": ["Fleming’s Left-Hand Rule", "Fleming’s Right-Hand Rule", "Lenz’s Law", "Ohm’s Law"],
+    "answer": 0
+},
+{
+    "question": "What type of transformer increases voltage?",
+    "options": ["Step-up transformer", "Step-down transformer", "Isolation transformer", "Auto transformer"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a measure of a material's ability to conduct an electric field?",
+    "options": ["Permittivity", "Permeability", "Conductivity", "Resistivity"],
+    "answer": 0
+},
+{
+    "question": "Which fundamental equation explains how a changing magnetic field induces an electric field?",
+    "options": ["Faraday’s Law", "Gauss’s Law", "Ohm’s Law", "Coulomb’s Law"],
+    "answer": 0
+},
+{
+    "question": "What is the primary cause of electromagnetic waves?",
+    "options": ["Oscillating electric and magnetic fields", "Heat conduction", "Nuclear reactions", "Static charges"],
+    "answer": 0
+},
+{
+    "question": "What is the effect of a dielectric material in a capacitor?",
+    "options": ["Increases capacitance", "Decreases capacitance", "Has no effect", "Prevents charge flow"],
+    "answer": 0
+},
+{
+    "question": "Which of the following quantities remains unchanged in a series circuit?",
+    "options": ["Current", "Voltage", "Resistance", "Power"],
+    "answer": 0
+},
+{
+    "question": "What is the SI unit of inductance?",
+    "options": ["Henry", "Weber", "Tesla", "Farad"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best describes the nature of electromagnetic waves?",
+    "options": ["Transverse waves", "Longitudinal waves", "Stationary waves", "Mechanical waves"],
+    "answer": 0
+},
+{
+    "question": "What happens to the magnetic field strength inside a solenoid when the number of turns is increased?",
+    "options": ["Increases", "Decreases", "Remains the same", "Becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which law states that the total magnetic flux through a closed surface is zero?",
+    "options": ["Gauss’s Law for Magnetism", "Faraday’s Law", "Lenz’s Law", "Coulomb’s Law"],
+    "answer": 0
+},
+{
+    "question": "What is the phenomenon where an induced current opposes the change that caused it?",
+    "options": ["Lenz’s Law", "Faraday’s Law", "Gauss’s Law", "Ohm’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which device converts mechanical energy into electrical energy using electromagnetic induction?",
+    "options": ["Generator", "Transformer", "Battery", "Capacitor"],
+    "answer": 0
+},
+{
+    "question": "What is the magnetic field produced by a current-carrying straight conductor at a given point proportional to?",
+    "options": ["Current and inversely proportional to distance", "Current and directly proportional to distance", "Current squared", "Independent of current"],
+    "answer": 0
+},
+{
+    "question": "Which type of circuit component stores energy in a magnetic field?",
+    "options": ["Inductor", "Capacitor", "Resistor", "Diode"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of the permeability of free space (μ₀)?",
+    "options": ["H/m", "F/m", "Ω", "T·m²"],
+    "answer": 0
+},
+{
+    "question": "Which of the following electromagnetic waves has the shortest wavelength?",
+    "options": ["Gamma rays", "X-rays", "Ultraviolet rays", "Microwaves"],
+    "answer": 0
+},
+      {
+    "question": "What is the SI unit of magnetic field strength?",
+    "options": ["Tesla", "Weber", "Gauss", "Henry"],
+    "answer": 0
+},
+{
+    "question": "Which law states that a changing electric field creates a magnetic field?",
+    "options": ["Maxwell-Ampère Law", "Gauss’s Law", "Faraday’s Law", "Lenz’s Law"],
+    "answer": 0
+},
+{
+    "question": "What is the effect of increasing frequency on the wavelength of an electromagnetic wave?",
+    "options": ["Decreases", "Increases", "Remains constant", "Becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which component is used to block DC current while allowing AC current to pass?",
+    "options": ["Capacitor", "Inductor", "Resistor", "Diode"],
+    "answer": 0
+},
+{
+    "question": "What happens to the induced voltage when the rate of change of magnetic flux increases?",
+    "options": ["Increases", "Decreases", "Remains constant", "Becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which of the following electromagnetic waves has the lowest frequency?",
+    "options": ["Radio waves", "Infrared rays", "Ultraviolet rays", "Gamma rays"],
+    "answer": 0
+},
+{
+    "question": "Which scientist is credited with the discovery of electromagnetic waves?",
+    "options": ["Heinrich Hertz", "James Clerk Maxwell", "Michael Faraday", "Nikola Tesla"],
+    "answer": 0
+},
+{
+    "question": "What happens to the resistance of a conductor when its temperature increases?",
+    "options": ["Increases", "Decreases", "Remains constant", "Becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which type of current is produced by a battery?",
+    "options": ["Direct current (DC)", "Alternating current (AC)", "Pulsating current", "Induced current"],
+    "answer": 0
+},
+{
+    "question": "Which device is used to measure electric current?",
+    "options": ["Ammeter", "Voltmeter", "Galvanometer", "Ohmmeter"],
+    "answer": 0
+},
+{
+    "question": "Which equation represents Ohm’s Law?",
+    "options": ["V = IR", "P = VI", "F = qE", "W = qV"],
+    "answer": 0
+},
+{
+    "question": "Which type of circuit allows current to flow through multiple paths?",
+    "options": ["Parallel circuit", "Series circuit", "Open circuit", "Short circuit"],
+    "answer": 0
+},
+{
+    "question": "What does a transformer primarily change?",
+    "options": ["Voltage", "Current", "Resistance", "Power"],
+    "answer": 0
+},
+{
+    "question": "What is the primary function of a diode?",
+    "options": ["Allow current in one direction", "Store energy", "Amplify signals", "Reduce resistance"],
+    "answer": 0
+},
+{
+    "question": "Which rule helps determine the direction of induced current?",
+    "options": ["Fleming’s Right-Hand Rule", "Fleming’s Left-Hand Rule", "Lenz’s Law", "Faraday’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which force is responsible for the motion of charged particles in a magnetic field?",
+    "options": ["Lorentz Force", "Centripetal Force", "Gravitational Force", "Nuclear Force"],
+    "answer": 0
+},
+{
+    "question": "Which phenomenon causes a conductor to oppose changes in current?",
+    "options": ["Self-induction", "Mutual induction", "Capacitance", "Resistance"],
+    "answer": 0
+},
+{
+    "question": "Which electromagnetic wave has the highest energy?",
+    "options": ["Gamma rays", "X-rays", "Microwaves", "Radio waves"],
+    "answer": 0
+},
+{
+    "question": "What is the time taken for one complete cycle of an AC signal called?",
+    "options": ["Period", "Frequency", "Amplitude", "Wavelength"],
+    "answer": 0
+},
+{
+    "question": "Which type of material allows electricity to pass through it easily?",
+    "options": ["Conductor", "Insulator", "Semiconductor", "Dielectric"],
+    "answer": 0
+},
+      {
+    "question": "Which of the following is a fundamental principle of electromagnetism?",
+    "options": ["Coulomb’s Law", "Newton’s Law", "Faraday’s Law", "Boyle’s Law"],
+    "answer": 2
+},
+{
+    "question": "What does Lenz’s Law state about the direction of induced current?",
+    "options": ["Opposes the change causing it", "Enhances the change causing it", "Has no effect", "Flows randomly"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between electric field and potential difference?",
+    "options": ["Electric field is the gradient of potential", "Potential is independent of electric field", "They are inversely proportional", "Electric field equals potential"],
+    "answer": 0
+},
+{
+    "question": "Which component stores energy in a magnetic field?",
+    "options": ["Inductor", "Capacitor", "Resistor", "Diode"],
+    "answer": 0
+},
+{
+    "question": "Which rule determines the direction of force on a charged particle moving in a magnetic field?",
+    "options": ["Right-Hand Rule", "Left-Hand Rule", "Ampère’s Rule", "Gauss’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which device converts mechanical energy into electrical energy?",
+    "options": ["Generator", "Motor", "Transformer", "Resistor"],
+    "answer": 0
+},
+{
+    "question": "Which law states that the total magnetic flux through a closed surface is zero?",
+    "options": ["Gauss’s Law for Magnetism", "Faraday’s Law", "Ampère’s Law", "Lenz’s Law"],
+    "answer": 0
+},
+{
+    "question": "What happens to an electron moving perpendicular to a uniform magnetic field?",
+    "options": ["Moves in a circular path", "Moves in a straight line", "Accelerates exponentially", "Stops immediately"],
+    "answer": 0
+},
+{
+    "question": "Which equation represents the force on a charge moving in a magnetic field?",
+    "options": ["F = qvB sinθ", "F = qE", "F = mv²/r", "F = Gm₁m₂/r²"],
+    "answer": 0
+},
+{
+    "question": "What type of wave is an electromagnetic wave?",
+    "options": ["Transverse", "Longitudinal", "Standing", "Mechanical"],
+    "answer": 0
+},
+{
+    "question": "What is the main function of a capacitor in a circuit?",
+    "options": ["Store electrical energy", "Convert AC to DC", "Amplify current", "Block current"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT a property of electromagnetic waves?",
+    "options": ["Require a medium", "Travel at the speed of light", "Can be polarized", "Consist of perpendicular electric and magnetic fields"],
+    "answer": 0
+},
+{
+    "question": "Which frequency range do microwaves belong to?",
+    "options": ["GHz", "MHz", "THz", "Hz"],
+    "answer": 0
+},
+{
+    "question": "Which force is responsible for electromagnetic interactions?",
+    "options": ["Electromagnetic force", "Strong nuclear force", "Gravitational force", "Weak nuclear force"],
+    "answer": 0
+},
+{
+    "question": "What is the effect of increasing the turns in a solenoid?",
+    "options": ["Increases the magnetic field", "Decreases the magnetic field", "Has no effect", "Changes direction of the field"],
+    "answer": 0
+},
+{
+    "question": "Which type of material has a high magnetic permeability?",
+    "options": ["Ferromagnetic", "Paramagnetic", "Diamagnetic", "Nonmagnetic"],
+    "answer": 0
+},
+{
+    "question": "What is the primary function of a step-up transformer?",
+    "options": ["Increase voltage", "Decrease voltage", "Convert AC to DC", "Store electrical energy"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of electric field strength?",
+    "options": ["Newton per Coulomb", "Tesla", "Farad", "Henry"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT an application of electromagnetism?",
+    "options": ["Nuclear fusion", "MRI scanners", "Electric motors", "Wireless charging"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best describes electromagnetic induction?",
+    "options": ["Generation of current due to a changing magnetic field", "Attraction of opposite charges", "Propagation of light in a vacuum", "Formation of electric dipoles"],
+    "answer": 0
+},
+      {
+    "question": "What happens when a charged particle moves parallel to a uniform magnetic field?",
+    "options": ["Moves in a straight line", "Moves in a circular path", "Accelerates indefinitely", "Stops immediately"],
+    "answer": 0
+},
+{
+    "question": "Which scientist formulated the laws of electromagnetic induction?",
+    "options": ["Faraday", "Maxwell", "Gauss", "Ampère"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is true about electromagnetic waves?",
+    "options": ["They do not require a medium", "They travel slower than sound waves", "They are longitudinal waves", "They cannot travel through a vacuum"],
+    "answer": 0
+},
+{
+    "question": "Which principle states that a current-carrying conductor produces a magnetic field?",
+    "options": ["Ampère’s Law", "Ohm’s Law", "Lenz’s Law", "Kirchhoff’s Law"],
+    "answer": 0
+},
+{
+    "question": "What is the SI unit of magnetic field strength?",
+    "options": ["Tesla", "Weber", "Coulomb", "Newton"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a property of a superconductor?",
+    "options": ["Zero electrical resistance", "High electrical resistance", "Increased heat dissipation", "Strong attraction to magnets"],
+    "answer": 0
+},
+{
+    "question": "What is the primary function of a transformer?",
+    "options": ["Change voltage levels", "Convert AC to DC", "Generate electricity", "Store charge"],
+    "answer": 0
+},
+{
+    "question": "Which type of electromagnetic radiation has the highest energy?",
+    "options": ["Gamma rays", "X-rays", "Microwaves", "Radio waves"],
+    "answer": 0
+},
+{
+    "question": "Which effect explains the emission of electrons from a metal surface when exposed to light?",
+    "options": ["Photoelectric effect", "Magnetoresistance", "Electromagnetic induction", "Lorentz force"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT an electromagnetic wave?",
+    "options": ["Sound wave", "Radio wave", "X-ray", "Infrared wave"],
+    "answer": 0
+},
+{
+    "question": "What determines the strength of a magnetic field in a solenoid?",
+    "options": ["Number of turns and current", "Material of the core only", "Length of the solenoid", "Resistance of the wire"],
+    "answer": 0
+},
+{
+    "question": "Which part of an electric motor is responsible for reversing the direction of current?",
+    "options": ["Commutator", "Stator", "Armature", "Rotor"],
+    "answer": 0
+},
+{
+    "question": "Which fundamental force is responsible for electromagnetic interactions?",
+    "options": ["Electromagnetic force", "Weak nuclear force", "Strong nuclear force", "Gravitational force"],
+    "answer": 0
+},
+{
+    "question": "What is the main function of a diode in an electrical circuit?",
+    "options": ["Allow current to flow in one direction", "Store energy", "Increase resistance", "Generate magnetic fields"],
+    "answer": 0
+},
+{
+    "question": "Which scientist developed equations that describe electromagnetic waves?",
+    "options": ["Maxwell", "Faraday", "Tesla", "Newton"],
+    "answer": 0
+},
+{
+    "question": "What happens to the induced current if the speed of a moving conductor in a magnetic field increases?",
+    "options": ["Increases", "Decreases", "Remains constant", "Becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which device is used to measure electric current?",
+    "options": ["Ammeter", "Voltmeter", "Ohmmeter", "Galvanometer"],
+    "answer": 0
+},
+{
+    "question": "Which of the following describes the direction of the induced current in a closed loop?",
+    "options": ["Opposes the change causing it", "Follows the direction of the magnetic field", "Moves randomly", "Depends on the temperature"],
+    "answer": 0
+},
+{
+    "question": "What is the primary function of a capacitor in an AC circuit?",
+    "options": ["Store charge", "Block direct current", "Increase voltage", "Convert energy to heat"],
+    "answer": 0
+},
+{
+    "question": "Which law explains how an electric field can create a magnetic field?",
+    "options": ["Faraday’s Law", "Gauss’s Law", "Ohm’s Law", "Newton’s Law"],
+    "answer": 0
+},
+      {
+    "question": "Which of the following best describes electromagnetic induction?",
+    "options": ["Generation of current due to a changing magnetic field", "Conversion of electric energy into heat", "Movement of charged particles in a vacuum", "Attraction between opposite charges"],
+    "answer": 0
+},
+{
+    "question": "What is the purpose of a magnetic field in an electric generator?",
+    "options": ["To induce an electric current", "To store electrical energy", "To increase the resistance", "To convert energy into heat"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between electric current and magnetic field strength?",
+    "options": ["Directly proportional", "Inversely proportional", "No relationship", "Depends on the medium"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT a source of electromagnetic waves?",
+    "options": ["Electric current", "Accelerating charges", "Static charges", "Oscillating charges"],
+    "answer": 2
+},
+{
+    "question": "What type of wave is an electromagnetic wave?",
+    "options": ["Transverse", "Longitudinal", "Mechanical", "Surface"],
+    "answer": 0
+},
+{
+    "question": "Which device is commonly used to measure magnetic field strength?",
+    "options": ["Tesla meter", "Voltmeter", "Ammeter", "Thermometer"],
+    "answer": 0
+},
+{
+    "question": "Which phenomenon explains the bending of light waves around obstacles?",
+    "options": ["Diffraction", "Reflection", "Refraction", "Polarization"],
+    "answer": 0
+},
+{
+    "question": "Which component is essential in a transformer?",
+    "options": ["Primary and secondary coils", "Battery", "Semiconductor", "Capacitor"],
+    "answer": 0
+},
+{
+    "question": "In a moving coil galvanometer, what opposes the motion of the coil?",
+    "options": ["Spring torque", "Magnetic force", "Electric force", "Friction"],
+    "answer": 0
+},
+{
+    "question": "What happens to a conductor moving perpendicular to a magnetic field?",
+    "options": ["An EMF is induced", "It becomes charged", "It loses its conductivity", "No effect occurs"],
+    "answer": 0
+},
+{
+    "question": "Which law states that the induced current opposes the change in magnetic flux?",
+    "options": ["Lenz’s Law", "Faraday’s Law", "Ohm’s Law", "Ampère’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which of the following does NOT affect the strength of an electromagnet?",
+    "options": ["Number of coils", "Amount of current", "Material of the core", "Ambient temperature"],
+    "answer": 3
+},
+{
+    "question": "What is the speed of electromagnetic waves in a vacuum?",
+    "options": ["3.0 × 10^8 m/s", "1.5 × 10^8 m/s", "9.8 m/s²", "Depends on frequency"],
+    "answer": 0
+},
+{
+    "question": "Which part of an electric motor interacts with the magnetic field to produce motion?",
+    "options": ["Armature", "Stator", "Capacitor", "Battery"],
+    "answer": 0
+},
+{
+    "question": "What determines the direction of force on a charged particle in a magnetic field?",
+    "options": ["Fleming’s left-hand rule", "Faraday’s law", "Coulomb’s law", "Newton’s second law"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT true about electromagnetic waves?",
+    "options": ["They require a medium", "They travel at the speed of light in a vacuum", "They have both electric and magnetic fields", "They can transfer energy through space"],
+    "answer": 0
+},
+{
+    "question": "What is the primary application of a solenoid?",
+    "options": ["Generating magnetic fields", "Measuring resistance", "Increasing voltage", "Storing electrical energy"],
+    "answer": 0
+},
+{
+    "question": "Which electromagnetic wave has the longest wavelength?",
+    "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+    "answer": 0
+},
+{
+    "question": "What type of current is used in household electrical circuits?",
+    "options": ["Alternating current (AC)", "Direct current (DC)", "Superconducting current", "Static electricity"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an application of electromagnetic induction?",
+    "options": ["Electric generators", "Electric heaters", "Solar panels", "Batteries"],
+    "answer": 0
+},
+      {
+    "question": "Which scientist formulated the laws of electromagnetic induction?",
+    "options": ["Michael Faraday", "Isaac Newton", "James Clerk Maxwell", "Nikola Tesla"],
+    "answer": 0
+},
+{
+    "question": "What is the SI unit of magnetic flux?",
+    "options": ["Weber", "Tesla", "Newton", "Coulomb"],
+    "answer": 0
+},
+{
+    "question": "Which of the following materials is NOT ferromagnetic?",
+    "options": ["Copper", "Iron", "Nickel", "Cobalt"],
+    "answer": 0
+},
+{
+    "question": "What happens to the magnetic field strength when the current in a solenoid increases?",
+    "options": ["It increases", "It decreases", "It remains the same", "It reverses direction"],
+    "answer": 0
+},
+{
+    "question": "Which electromagnetic wave has the highest energy?",
+    "options": ["Gamma rays", "X-rays", "Ultraviolet rays", "Microwaves"],
+    "answer": 0
+},
+{
+    "question": "What is the primary function of a step-up transformer?",
+    "options": ["Increase voltage", "Decrease voltage", "Convert AC to DC", "Store electrical energy"],
+    "answer": 0
+},
+{
+    "question": "Which phenomenon describes the interaction between electricity and magnetism?",
+    "options": ["Electromagnetism", "Thermodynamics", "Optics", "Nuclear physics"],
+    "answer": 0
+},
+{
+    "question": "What is the right-hand rule used for?",
+    "options": ["Determining the direction of magnetic force", "Finding electrical resistance", "Measuring voltage", "Calculating capacitance"],
+    "answer": 0
+},
+{
+    "question": "Which part of an electric motor converts electrical energy into mechanical energy?",
+    "options": ["Rotor", "Commutator", "Brushes", "Battery"],
+    "answer": 0
+},
+{
+    "question": "What is the primary function of a capacitor in an AC circuit?",
+    "options": ["Store and release charge", "Generate current", "Induce a magnetic field", "Convert energy into heat"],
+    "answer": 0
+},
+{
+    "question": "Which type of electromagnetic wave is used in mobile phone communication?",
+    "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+    "answer": 0
+},
+{
+    "question": "What is the effect of increasing the number of turns in a coil?",
+    "options": ["Increases the induced EMF", "Decreases the induced EMF", "No effect", "Reverses the direction of current"],
+    "answer": 0
+},
+{
+    "question": "What is the role of an inductor in an electrical circuit?",
+    "options": ["Oppose changes in current", "Store electrical charge", "Increase voltage", "Convert AC to DC"],
+    "answer": 0
+},
+{
+    "question": "What happens when a charged particle moves perpendicular to a magnetic field?",
+    "options": ["It experiences a force", "It remains stationary", "Its velocity decreases", "Its charge increases"],
+    "answer": 0
+},
+{
+    "question": "Which component of an electrical circuit is used to produce a uniform magnetic field?",
+    "options": ["Solenoid", "Resistor", "Capacitor", "Transformer"],
+    "answer": 0
+},
+{
+    "question": "What property of an electromagnetic wave determines its frequency?",
+    "options": ["Wavelength", "Amplitude", "Speed", "Phase shift"],
+    "answer": 0
+},
+{
+    "question": "Which device is used to measure alternating current in a circuit?",
+    "options": ["Ammeter", "Voltmeter", "Galvanometer", "Thermometer"],
+    "answer": 0
+},
+{
+    "question": "Which law explains the force experienced by a current-carrying conductor in a magnetic field?",
+    "options": ["Lorentz Force Law", "Ohm’s Law", "Coulomb’s Law", "Hooke’s Law"],
+    "answer": 0
+},
+{
+    "question": "What is the main purpose of a relay in an electrical circuit?",
+    "options": ["To control a high-power circuit with a low-power signal", "To store electrical energy", "To increase resistance", "To generate a magnetic field"],
+    "answer": 0
+},
+{
+    "question": "Which electromagnetic wave is primarily used in night vision technology?",
+    "options": ["Infrared waves", "Ultraviolet waves", "X-rays", "Gamma rays"],
+    "answer": 0
+},
+      {
+    "question": "What is the fundamental principle behind electromagnetic induction?",
+    "options": ["Changing magnetic field induces an EMF", "Electric current creates a gravitational field", "Voltage remains constant in all circuits", "A moving charge does not generate a field"],
+    "answer": 0
+},
+{
+    "question": "Which law states that the direction of induced current opposes the cause producing it?",
+    "options": ["Lenz’s Law", "Ohm’s Law", "Faraday’s Law", "Coulomb’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which of these electromagnetic waves has the longest wavelength?",
+    "options": ["Radio waves", "X-rays", "Ultraviolet rays", "Gamma rays"],
+    "answer": 0
+},
+{
+    "question": "What is the SI unit of magnetic field strength?",
+    "options": ["Tesla", "Weber", "Henry", "Ampere"],
+    "answer": 0
+},
+{
+    "question": "Which device converts mechanical energy into electrical energy using electromagnetic induction?",
+    "options": ["Generator", "Motor", "Battery", "Capacitor"],
+    "answer": 0
+},
+{
+    "question": "Which part of a transformer is responsible for inducing voltage in the secondary coil?",
+    "options": ["Magnetic core", "Primary winding", "Iron casing", "Electrical contacts"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between current and voltage in an ideal inductor?",
+    "options": ["Current lags voltage by 90 degrees", "Current leads voltage by 90 degrees", "Current and voltage are in phase", "Current and voltage are inversely proportional"],
+    "answer": 0
+},
+{
+    "question": "Which rule determines the direction of force on a current-carrying conductor in a magnetic field?",
+    "options": ["Fleming’s Left-Hand Rule", "Fleming’s Right-Hand Rule", "Kirchhoff’s Rule", "Lenz’s Law"],
+    "answer": 0
+},
+{
+    "question": "Which component is essential for tuning radio frequencies?",
+    "options": ["Inductor", "Capacitor", "Diode", "Transformer"],
+    "answer": 1
+},
+{
+    "question": "What is the effect of increasing the frequency of an AC signal on an inductor?",
+    "options": ["Increases inductive reactance", "Decreases inductive reactance", "No effect", "Reduces voltage"],
+    "answer": 0
+},
+{
+    "question": "What causes the formation of eddy currents in a conductor?",
+    "options": ["Changing magnetic field", "Static electric charge", "Constant magnetic field", "High resistance"],
+    "answer": 0
+},
+{
+    "question": "What is the function of a dielectric material in a capacitor?",
+    "options": ["Increase capacitance", "Decrease capacitance", "Convert energy into heat", "Store electrical current"],
+    "answer": 0
+},
+{
+    "question": "What is the main application of a solenoid?",
+    "options": ["Generating a uniform magnetic field", "Increasing resistance", "Storing charge", "Reducing current"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is NOT an application of electromagnetic waves?",
+    "options": ["Generating gravitational fields", "Wireless communication", "X-ray imaging", "Microwave ovens"],
+    "answer": 0
+},
+{
+    "question": "What happens when an electric charge moves in a uniform magnetic field parallel to the field?",
+    "options": ["No force is experienced", "It moves in a circular path", "It accelerates exponentially", "It gains mass"],
+    "answer": 0
+},
+{
+    "question": "Which electromagnetic wave has the highest frequency?",
+    "options": ["Gamma rays", "Radio waves", "Microwaves", "Infrared rays"],
+    "answer": 0
+},
+{
+    "question": "In an AC circuit, what happens to the capacitive reactance when frequency increases?",
+    "options": ["It decreases", "It increases", "It remains constant", "It depends on resistance"],
+    "answer": 0
+},
+{
+    "question": "What happens when a wire carrying current is placed perpendicular to a magnetic field?",
+    "options": ["It experiences a force", "It generates heat", "It remains stationary", "It loses resistance"],
+    "answer": 0
+},
+{
+    "question": "What is the role of a commutator in a DC motor?",
+    "options": ["Reverse current direction", "Reduce resistance", "Increase voltage", "Convert DC to AC"],
+    "answer": 0
+},
+{
+    "question": "Which scientist developed the equations describing electromagnetic waves?",
+    "options": ["James Clerk Maxwell", "Michael Faraday", "Isaac Newton", "Albert Einstein"],
+    "answer": 0
+},
+      {
+    "question": "Which scientist discovered electromagnetic induction?",
+    "options": ["Michael Faraday", "James Clerk Maxwell", "Nikola Tesla", "Isaac Newton"],
+    "answer": 0
+},
+{
+    "question": "What is the direction of the magnetic field around a current-carrying wire determined by?",
+    "options": ["Right-hand rule", "Left-hand rule", "Fleming's rule", "Ohm's law"],
+    "answer": 0
+},
+{
+    "question": "Which device is used to step up or step down voltage in an AC circuit?",
+    "options": ["Transformer", "Resistor", "Capacitor", "Inductor"],
+    "answer": 0
+},
+{
+    "question": "Which phenomenon describes the production of voltage due to a changing magnetic field?",
+    "options": ["Electromagnetic induction", "Photoelectric effect", "Thermoelectric effect", "Electrostatic force"],
+    "answer": 0
+},
+{
+    "question": "What happens to a charged particle moving perpendicular to a uniform magnetic field?",
+    "options": ["It moves in a circular path", "It continues in a straight line", "It comes to rest", "It moves in a helical path"],
+    "answer": 0
+},
+{
+    "question": "Which of these devices converts electrical energy into mechanical energy?",
+    "options": ["Electric motor", "Transformer", "Capacitor", "Generator"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of magnetic flux?",
+    "options": ["Weber", "Tesla", "Henry", "Volt"],
+    "answer": 0
+},
+{
+    "question": "Which property of an inductor opposes changes in current?",
+    "options": ["Inductance", "Capacitance", "Resistance", "Conductance"],
+    "answer": 0
+},
+{
+    "question": "What happens to the magnetic field strength if the current in a solenoid increases?",
+    "options": ["It increases", "It decreases", "It remains constant", "It becomes zero"],
+    "answer": 0
+},
+{
+    "question": "Which of the following materials is most suitable for making the core of an electromagnet?",
+    "options": ["Iron", "Copper", "Aluminum", "Plastic"],
+    "answer": 0
+},
+{
+    "question": "Which electromagnetic wave is commonly used for sterilization and killing bacteria?",
+    "options": ["Ultraviolet rays", "Microwaves", "Radio waves", "Infrared rays"],
+    "answer": 0
+},
+{
+    "question": "In an electromagnetic wave, which two fields oscillate perpendicular to each other?",
+    "options": ["Electric and magnetic", "Electric and gravitational", "Magnetic and nuclear", "Gravitational and nuclear"],
+    "answer": 0
+},
+{
+    "question": "What is the primary function of a capacitor in an AC circuit?",
+    "options": ["Store and release energy", "Convert AC to DC", "Increase resistance", "Amplify signals"],
+    "answer": 0
+},
+{
+    "question": "Which electromagnetic wave has the shortest wavelength?",
+    "options": ["Gamma rays", "X-rays", "Ultraviolet rays", "Radio waves"],
+    "answer": 0
+},
+{
+    "question": "Which component in a radio receiver selects a specific frequency signal?",
+    "options": ["Tuner circuit", "Antenna", "Speaker", "Amplifier"],
+    "answer": 0
+},
+{
+    "question": "Which force is responsible for the operation of an electric motor?",
+    "options": ["Lorentz force", "Gravitational force", "Nuclear force", "Electrostatic force"],
+    "answer": 0
+},
+{
+    "question": "What is the role of an inductor in an AC circuit?",
+    "options": ["Oppose changes in current", "Store electric charge", "Convert AC to DC", "Reduce voltage"],
+    "answer": 0
+},
+{
+    "question": "What happens when a conductor is moved through a magnetic field?",
+    "options": ["An EMF is induced", "Its mass increases", "It loses conductivity", "Its temperature drops"],
+    "answer": 0
+},
+{
+    "question": "What type of current is induced in a conductor by a changing magnetic field?",
+    "options": ["Alternating current", "Direct current", "Pulsed current", "Static current"],
+    "answer": 0
+},
+{
+    "question": "Which scientist formulated the classical equations describing electromagnetism?",
+    "options": ["James Clerk Maxwell", "Michael Faraday", "Nikola Tesla", "Isaac Newton"],
+    "answer": 0
+}
+  ],
+  
+  thermodynamics: [
+    {
+      "question": "Which law of thermodynamics states that energy cannot be created or destroyed, only transformed?",
+      "options": ["Zeroth law", "First law", "Second law", "Third law"],
+      "answer": 1
+    },
+    {
+      "question": "Entropy in an isolated system tends to:",
+      "options": ["Decrease", "Remain constant", "Increase", "Oscillate"],
+      "answer": 2
+    },
+    {
+      "question": "The absolute zero temperature is defined as:",
+      "options": ["0°C", "0°F", "0 K", "273.15 K"],
+      "answer": 2
+    },
+    {
+      "question": "In an isothermal process, what remains constant?",
+      "options": ["Pressure", "Volume", "Temperature", "Entropy"],
+      "answer": 2
+    },
+    {
+      "question": "Which cycle is the theoretical maximum efficiency cycle for converting heat into work?",
+      "options": ["Otto cycle", "Rankine cycle", "Carnot cycle", "Diesel cycle"],
+      "answer": 2
+    },
+      {
+    "question": "Which law of thermodynamics states that energy cannot be created or destroyed?",
+    "options": ["First Law", "Second Law", "Third Law", "Zeroth Law"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of temperature in the SI system?",
+    "options": ["Kelvin", "Celsius", "Fahrenheit", "Rankine"],
+    "answer": 0
+},
+{
+    "question": "Which process occurs at constant pressure?",
+    "options": ["Isobaric", "Isochoric", "Isothermal", "Adiabatic"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the heat energy required to raise the temperature of a substance?",
+    "options": ["Heat capacity", "Specific heat", "Latent heat", "Thermal conductivity"],
+    "answer": 1
+},
+{
+    "question": "What is the second law of thermodynamics also known as?",
+    "options": ["Law of entropy", "Law of energy conservation", "Law of conservation of mass", "Law of motion"],
+    "answer": 0
+},
+{
+    "question": "What is the efficiency of a heat engine defined as?",
+    "options": ["Work done / Heat absorbed", "Heat absorbed / Work done", "Work done / Heat released", "Heat released / Work done"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of an irreversible process?",
+    "options": ["Mixing two gases", "Freezing water", "Compression of gas at constant temperature", "Reversible expansion of a gas"],
+    "answer": 0
+},
+{
+    "question": "Which thermodynamic quantity represents the amount of energy in a system that can be used to do work?",
+    "options": ["Enthalpy", "Internal energy", "Helmholtz free energy", "Gibbs free energy"],
+    "answer": 2
+},
+{
+    "question": "In an isothermal process, what remains constant?",
+    "options": ["Temperature", "Pressure", "Volume", "Internal energy"],
+    "answer": 0
+},
+{
+    "question": "Which process occurs at constant volume?",
+    "options": ["Isochoric", "Isobaric", "Isothermal", "Adiabatic"],
+    "answer": 0
+},
+{
+    "question": "What is the third law of thermodynamics?",
+    "options": ["As temperature approaches absolute zero, entropy approaches a minimum", "Energy cannot be created or destroyed", "The total entropy of an isolated system always increases", "Heat flows from hot to cold bodies"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a state function?",
+    "options": ["Enthalpy", "Work", "Heat", "Energy transferred"],
+    "answer": 0
+},
+{
+    "question": "In a Carnot engine, which of the following processes is reversible?",
+    "options": ["Expansion", "Compression", "Both expansion and compression", "Neither expansion nor compression"],
+    "answer": 2
+},
+{
+    "question": "What is the specific heat of water?",
+    "options": ["4.18 J/g°C", "1.0 J/g°C", "0.5 J/g°C", "2.0 J/g°C"],
+    "answer": 0
+},
+{
+    "question": "Which of the following represents the equation for the first law of thermodynamics?",
+    "options": ["ΔU = Q - W", "ΔU = Q + W", "ΔH = Q - W", "ΔH = Q + W"],
+    "answer": 0
+},
+{
+    "question": "What happens during an adiabatic process?",
+    "options": ["No heat is exchanged", "Pressure remains constant", "Volume remains constant", "Temperature remains constant"],
+    "answer": 0
+},
+{
+    "question": "In which process does entropy increase?",
+    "options": ["Irreversible expansion of gas", "Compression of gas", "Heating of a solid", "Isothermal compression"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of an isobaric process?",
+    "options": ["Heating water in an open container", "Compression of a gas", "Free expansion of a gas", "Expansion of gas in a piston with a movable lid"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the heat required to convert a solid into a liquid without changing its temperature?",
+    "options": ["Latent heat of fusion", "Latent heat of vaporization", "Specific heat", "Sensible heat"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is true about the Gibbs free energy?",
+    "options": ["It predicts the spontaneity of a process", "It is always negative", "It equals the enthalpy minus the entropy", "It is independent of temperature"],
+    "answer": 0
+},
+      {
+    "question": "What does the second law of thermodynamics state about entropy?",
+    "options": ["Entropy of an isolated system always increases", "Entropy of a system is constant", "Entropy decreases with increasing temperature", "Entropy is always zero"],
+    "answer": 0
+},
+{
+    "question": "What is the definition of internal energy in thermodynamics?",
+    "options": ["Energy contained within the system due to its temperature", "Energy exchanged between a system and its surroundings", "Energy that can be used to perform work", "Energy required to increase the system's temperature"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best describes a reversible process?",
+    "options": ["A process that can be undone without any loss of energy", "A process that occurs naturally", "A process that cannot be reversed", "A process with constant entropy"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a characteristic of an ideal gas according to thermodynamic principles?",
+    "options": ["The gas molecules do not interact with each other", "The gas molecules have significant volume", "The gas molecules condense under low temperatures", "The gas molecules move very slowly"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the total heat content of a system, including both internal energy and pressure-volume work?",
+    "options": ["Enthalpy", "Entropy", "Internal energy", "Heat capacity"],
+    "answer": 0
+},
+{
+    "question": "In an isothermal process, which of the following variables remains constant?",
+    "options": ["Temperature", "Pressure", "Volume", "Entropy"],
+    "answer": 0
+},
+{
+    "question": "What type of process occurs when a system absorbs heat without any change in temperature?",
+    "options": ["Isochoric", "Isobaric", "Isothermal", "Adiabatic"],
+    "answer": 2
+},
+{
+    "question": "What is the unit of energy in the SI system?",
+    "options": ["Joule", "Calorie", "Erg", "Newton-meter"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a characteristic of an adiabatic process?",
+    "options": ["No heat is exchanged between the system and its surroundings", "The pressure remains constant", "The volume remains constant", "The temperature remains constant"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is the primary factor influencing the efficiency of a heat engine?",
+    "options": ["Temperature difference between heat source and sink", "Volume of gas used", "Size of the engine", "Amount of heat absorbed"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the heat required to change a substance from a liquid to a gas at its boiling point?",
+    "options": ["Latent heat of vaporization", "Latent heat of fusion", "Specific heat", "Sensible heat"],
+    "answer": 0
+},
+{
+    "question": "What happens to the entropy of a system in a reversible adiabatic process?",
+    "options": ["It remains constant", "It increases", "It decreases", "It is undefined"],
+    "answer": 0
+},
+{
+    "question": "In which process does the internal energy of a gas remain unchanged?",
+    "options": ["Isochoric", "Isobaric", "Isothermal", "Adiabatic"],
+    "answer": 2
+},
+{
+    "question": "Which of the following best defines temperature in thermodynamics?",
+    "options": ["A measure of the average kinetic energy of the particles in a substance", "A measure of the total energy in a system", "A measure of the heat content of a system", "A measure of the disorder in a system"],
+    "answer": 0
+},
+{
+    "question": "What happens during an isobaric process?",
+    "options": ["The pressure remains constant", "The volume remains constant", "The temperature remains constant", "The heat content remains constant"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a state function?",
+    "options": ["Enthalpy", "Heat", "Work", "Force"],
+    "answer": 0
+},
+{
+    "question": "What happens to the temperature of a system undergoing an isothermal expansion?",
+    "options": ["The temperature remains constant", "The temperature decreases", "The temperature increases", "The temperature is unaffected by pressure"],
+    "answer": 0
+},
+{
+    "question": "What is the key concept behind the third law of thermodynamics?",
+    "options": ["As the temperature approaches absolute zero, entropy approaches a minimum", "Energy is conserved in a system", "The total energy of a system is constant", "Entropy increases with increasing temperature"],
+    "answer": 0
+},
+{
+    "question": "In a cyclic process, what happens to the net change in internal energy?",
+    "options": ["It is zero", "It is positive", "It is negative", "It depends on the specific process"],
+    "answer": 0
+},
+{
+    "question": "Which of the following describes the heat transfer mechanism that occurs due to temperature difference between objects?",
+    "options": ["Conduction", "Convection", "Radiation", "Advection"],
+    "answer": 0
+},
+      {
+    "question": "Which law of thermodynamics states that energy cannot be created or destroyed?",
+    "options": ["First Law of Thermodynamics", "Second Law of Thermodynamics", "Third Law of Thermodynamics", "Zeroth Law of Thermodynamics"],
+    "answer": 0
+},
+{
+    "question": "What is the formula for work done by an ideal gas in an isothermal process?",
+    "options": ["W = nRT ln(Vf / Vi)", "W = P(Vf - Vi)", "W = mgh", "W = 1/2 mv^2"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is true about an isochoric process?",
+    "options": ["The volume remains constant", "The pressure remains constant", "The temperature remains constant", "The heat exchanged is zero"],
+    "answer": 0
+},
+{
+    "question": "In a Carnot engine, which of the following factors influences its maximum efficiency?",
+    "options": ["The temperature difference between the hot and cold reservoirs", "The size of the engine", "The speed of the engine", "The type of gas used"],
+    "answer": 0
+},
+{
+    "question": "What is the term for the energy transferred to a substance as heat that causes a change in its temperature?",
+    "options": ["Sensible heat", "Latent heat", "Specific heat", "Heat of fusion"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between pressure and volume in Boyle's law?",
+    "options": ["Pressure is inversely proportional to volume", "Pressure is directly proportional to volume", "Pressure is independent of volume", "Pressure and volume are both constants"],
+    "answer": 0
+},
+{
+    "question": "Which of the following processes is a constant pressure process?",
+    "options": ["Isobaric", "Isochoric", "Isothermal", "Adiabatic"],
+    "answer": 0
+},
+{
+    "question": "In the context of thermodynamics, what is the meaning of heat capacity?",
+    "options": ["The amount of heat required to raise the temperature of an object by one degree", "The total amount of energy contained within a system", "The change in entropy for a process", "The work done by a system during a process"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best defines enthalpy?",
+    "options": ["The heat content of a system at constant pressure", "The internal energy of a system", "The work done by a system", "The heat exchanged in an isothermal process"],
+    "answer": 0
+},
+{
+    "question": "Which process describes a situation where no heat is exchanged between the system and surroundings?",
+    "options": ["Adiabatic", "Isobaric", "Isochoric", "Isothermal"],
+    "answer": 0
+},
+{
+    "question": "Which law of thermodynamics involves the transfer of energy between two bodies based on temperature difference?",
+    "options": ["Zeroth Law of Thermodynamics", "First Law of Thermodynamics", "Second Law of Thermodynamics", "Third Law of Thermodynamics"],
+    "answer": 0
+},
+{
+    "question": "Which of the following statements is true for an adiabatic process?",
+    "options": ["There is no heat exchange with the surroundings", "The temperature remains constant", "The pressure is constant", "The volume is constant"],
+    "answer": 0
+},
+{
+    "question": "What is the specific heat capacity of water at constant pressure?",
+    "options": ["4.18 J/g°C", "1.00 J/g°C", "9.81 J/g°C", "0.92 J/g°C"],
+    "answer": 0
+},
+{
+    "question": "In thermodynamics, what is the term for the energy that is not useful for doing work?",
+    "options": ["Waste heat", "Internal energy", "Work output", "Free energy"],
+    "answer": 0
+},
+{
+    "question": "What happens to the temperature of a gas during an adiabatic compression?",
+    "options": ["The temperature increases", "The temperature decreases", "The temperature remains constant", "The temperature fluctuates"],
+    "answer": 0
+},
+{
+    "question": "Which process occurs when a system absorbs or releases heat without changing its temperature?",
+    "options": ["Phase change", "Adiabatic process", "Isothermal process", "Isochoric process"],
+    "answer": 0
+},
+{
+    "question": "What does the second law of thermodynamics state about energy flow?",
+    "options": ["Energy flows from high-temperature regions to low-temperature regions", "Energy flows from low-temperature regions to high-temperature regions", "Energy is conserved", "Energy can be created or destroyed"],
+    "answer": 0
+},
+{
+    "question": "In the context of thermodynamics, what is Gibbs free energy used to predict?",
+    "options": ["The spontaneity of a process", "The heat capacity of a system", "The work done by a system", "The temperature of a system"],
+    "answer": 0
+},
+{
+    "question": "What happens to the work done in an isothermal expansion of an ideal gas?",
+    "options": ["It is equal to the heat added to the system", "It is equal to the change in internal energy", "It is negative", "It is zero"],
+    "answer": 0
+},
+      {
+    "question": "What is the primary source of energy in a thermodynamic cycle?",
+    "options": ["Heat", "Work", "Internal energy", "Temperature"],
+    "answer": 0
+},
+{
+    "question": "Which of the following processes is characterized by no change in the internal energy of a system?",
+    "options": ["Isothermal", "Isochoric", "Adiabatic", "Isobaric"],
+    "answer": 0
+},
+{
+    "question": "What type of system can exchange both matter and energy with its surroundings?",
+    "options": ["Open system", "Closed system", "Isolated system", "Equilibrium system"],
+    "answer": 0
+},
+{
+    "question": "What does the third law of thermodynamics imply about the entropy of a system at absolute zero?",
+    "options": ["The entropy approaches zero", "The entropy approaches infinity", "The entropy is constant", "The entropy is undefined"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is the unit of pressure in the International System of Units (SI)?",
+    "options": ["Pascal", "Joule", "Watt", "Newton"],
+    "answer": 0
+},
+{
+    "question": "What happens to the temperature of a gas when it is allowed to expand adiabatically?",
+    "options": ["The temperature decreases", "The temperature increases", "The temperature remains constant", "The temperature fluctuates periodically"],
+    "answer": 0
+},
+{
+    "question": "In a reversible isothermal process, what is the relationship between the work done and the heat added to the system?",
+    "options": ["Work is equal to the heat added", "Work is greater than the heat added", "Work is less than the heat added", "Work is independent of heat added"],
+    "answer": 0
+},
+{
+    "question": "Which type of thermodynamic process occurs at a constant temperature?",
+    "options": ["Isothermal", "Isobaric", "Isochoric", "Adiabatic"],
+    "answer": 0
+},
+{
+    "question": "What is the term used to describe the energy required to change the temperature of a substance without changing its phase?",
+    "options": ["Specific heat", "Latent heat", "Enthalpy", "Entropy"],
+    "answer": 0
+},
+{
+    "question": "What is the efficiency of a Carnot engine dependent on?",
+    "options": ["Temperature of the hot and cold reservoirs", "Size of the engine", "Material of the engine", "Speed of the engine"],
+    "answer": 0
+},
+{
+    "question": "Which of the following thermodynamic quantities is always conserved in an isolated system?",
+    "options": ["Energy", "Entropy", "Temperature", "Pressure"],
+    "answer": 0
+},
+{
+    "question": "What happens to the volume of an ideal gas during an isothermal expansion?",
+    "options": ["The volume increases", "The volume decreases", "The volume remains constant", "The volume fluctuates"],
+    "answer": 0
+},
+{
+    "question": "In thermodynamics, what does the term 'entropy' represent?",
+    "options": ["The disorder or randomness of a system", "The amount of work done by the system", "The heat capacity of the system", "The energy absorbed by the system"],
+    "answer": 0
+},
+{
+    "question": "What type of process is represented by an ideal gas that undergoes a rapid compression without any heat exchange?",
+    "options": ["Adiabatic process", "Isobaric process", "Isochoric process", "Isothermal process"],
+    "answer": 0
+},
+{
+    "question": "What happens to the internal energy of an ideal gas in an isochoric process?",
+    "options": ["The internal energy changes", "The internal energy remains constant", "The pressure remains constant", "The temperature decreases"],
+    "answer": 0
+},
+{
+    "question": "In a thermodynamic system, what does 'work' refer to?",
+    "options": ["Energy transferred by force", "Energy transferred by heat", "The change in temperature", "The change in pressure"],
+    "answer": 0
+},
+{
+    "question": "What is the energy transferred to a system called when it causes a phase change without a change in temperature?",
+    "options": ["Latent heat", "Sensible heat", "Specific heat", "Enthalpy"],
+    "answer": 0
+},
+{
+    "question": "In a heat engine, what is the purpose of a heat sink?",
+    "options": ["To absorb heat from the engine", "To generate heat for the engine", "To convert heat into work", "To reduce the temperature of the engine"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of an isobaric process?",
+    "options": ["Boiling water at constant pressure", "Compressing air in a piston", "Heating a gas in a sealed container", "Rapidly expanding gas in an insulated container"],
+    "answer": 0
+},
+{
+    "question": "Which equation is used to calculate the work done by a gas in an isobaric process?",
+    "options": ["W = P(Vf - Vi)", "W = nRT ln(Vf / Vi)", "W = mgh", "W = 1/2 mv^2"],
+    "answer": 0
+},
+      {
+    "question": "What is the relationship between pressure and volume in Boyle's Law?",
+    "options": ["Pressure is inversely proportional to volume", "Pressure is directly proportional to volume", "Pressure and volume are independent", "Pressure equals volume"],
+    "answer": 0
+},
+{
+    "question": "In a thermodynamic system, what does a negative work value indicate?",
+    "options": ["The system is doing work on the surroundings", "The surroundings are doing work on the system", "No work is done", "The system's energy is increasing"],
+    "answer": 1
+},
+{
+    "question": "What is the formula for calculating the heat required to raise the temperature of a substance?",
+    "options": ["Q = mcΔT", "Q = mvΔT", "Q = PΔV", "Q = nRT"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is true for an adiabatic process?",
+    "options": ["No heat is exchanged with the surroundings", "The temperature stays constant", "The volume remains constant", "The pressure remains constant"],
+    "answer": 0
+},
+{
+    "question": "In a reversible process, what is the relationship between the heat absorbed and the work done by the system?",
+    "options": ["Heat absorbed equals work done", "Heat absorbed is greater than work done", "Heat absorbed is less than work done", "Heat absorbed is independent of work done"],
+    "answer": 0
+},
+{
+    "question": "What is the first law of thermodynamics?",
+    "options": ["Energy cannot be created or destroyed, only transferred or converted", "Entropy always increases", "Work is the only form of energy", "The internal energy of a system is constant"],
+    "answer": 0
+},
+{
+    "question": "What is the Carnot efficiency equation used to calculate?",
+    "options": ["The efficiency of a heat engine", "The temperature of the system", "The work done by a system", "The change in internal energy"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of an isothermal process?",
+    "options": ["Melting ice", "Boiling water", "Compressing a gas at constant temperature", "Heating a gas in a closed container"],
+    "answer": 2
+},
+{
+    "question": "In a closed system, what happens to the total energy during an isochoric process?",
+    "options": ["The total energy remains constant", "The total energy increases", "The total energy decreases", "The total energy fluctuates"],
+    "answer": 0
+},
+{
+    "question": "What is the unit of energy in thermodynamics?",
+    "options": ["Joule", "Calorie", "Watt", "Newton"],
+    "answer": 0
+},
+{
+    "question": "What happens to the entropy of a system when it undergoes a reversible process?",
+    "options": ["Entropy does not change", "Entropy increases", "Entropy decreases", "Entropy fluctuates"],
+    "answer": 0
+},
+{
+    "question": "In a cyclic process, what is the net work done by the system?",
+    "options": ["Net work is zero", "Net work is positive", "Net work is negative", "Net work is dependent on temperature"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best describes the work done in a thermodynamic process?",
+    "options": ["Work is energy transferred by a force", "Work is energy transferred by heat", "Work is energy transferred by mass", "Work is the change in entropy"],
+    "answer": 0
+},
+{
+    "question": "What is the function of a heat engine?",
+    "options": ["To convert heat energy into mechanical work", "To convert mechanical work into heat energy", "To transfer heat from the cold to the hot body", "To reduce energy consumption"],
+    "answer": 0
+},
+{
+    "question": "In thermodynamics, what is meant by 'thermal equilibrium'?",
+    "options": ["When all parts of a system are at the same temperature", "When the system is isolated", "When no work is done", "When energy is conserved"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of an isochoric process?",
+    "options": ["Heating a gas in a fixed volume container", "Expanding gas in a piston", "Boiling water", "Compressing a spring"],
+    "answer": 0
+},
+{
+    "question": "What does the second law of thermodynamics state about entropy?",
+    "options": ["Entropy of an isolated system always increases", "Entropy of a system remains constant", "Entropy decreases in all processes", "Entropy is inversely proportional to heat transfer"],
+    "answer": 0
+},
+{
+    "question": "In an adiabatic process, what happens to the temperature of a gas when it is compressed?",
+    "options": ["The temperature increases", "The temperature decreases", "The temperature stays constant", "The temperature fluctuates"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between heat and work in a thermodynamic system during a cyclic process?",
+    "options": ["The net heat is equal to the net work", "Heat is always greater than work", "Work is always greater than heat", "Heat and work are independent"],
+    "answer": 0
+},
+      {
+    "question": "Which of the following is a characteristic of an ideal gas?",
+    "options": ["It has no intermolecular forces", "It has strong intermolecular forces", "It behaves according to the first law of thermodynamics", "Its temperature is always constant"],
+    "answer": 0
+},
+{
+    "question": "What does the third law of thermodynamics state?",
+    "options": ["As temperature approaches absolute zero, entropy approaches a minimum", "Energy is conserved in all processes", "Heat naturally flows from cold to hot", "The total energy of an isolated system remains constant"],
+    "answer": 0
+},
+{
+    "question": "In a thermodynamic cycle, what happens to the internal energy at the end of one complete cycle?",
+    "options": ["The internal energy returns to its original value", "The internal energy decreases", "The internal energy increases", "The internal energy fluctuates"],
+    "answer": 0
+},
+{
+    "question": "What is the purpose of a refrigerator in thermodynamics?",
+    "options": ["To transfer heat from a cold body to a hot body", "To convert heat into mechanical energy", "To maintain thermal equilibrium", "To increase the entropy of the system"],
+    "answer": 0
+},
+{
+    "question": "What type of thermodynamic process occurs when heat is added to a system and the volume remains constant?",
+    "options": ["Isochoric process", "Adiabatic process", "Isothermal process", "Isoenthalpic process"],
+    "answer": 0
+},
+{
+    "question": "In thermodynamics, what is the formula for calculating work done by a gas during expansion?",
+    "options": ["W = PΔV", "W = mgh", "W = Fd", "W = Q - ΔU"],
+    "answer": 0
+},
+{
+    "question": "In which thermodynamic process does the temperature of a gas remain constant?",
+    "options": ["Isothermal process", "Isochoric process", "Adiabatic process", "Isoentropic process"],
+    "answer": 0
+},
+{
+    "question": "In an adiabatic process, how does the pressure change as a gas expands?",
+    "options": ["Pressure decreases", "Pressure increases", "Pressure stays constant", "Pressure fluctuates"],
+    "answer": 0
+},
+{
+    "question": "What does the term 'entropy' refer to in thermodynamics?",
+    "options": ["The degree of disorder or randomness in a system", "The amount of work done by the system", "The amount of heat exchanged", "The change in volume of a gas"],
+    "answer": 0
+},
+{
+    "question": "What is a characteristic of an isothermal process?",
+    "options": ["Temperature remains constant", "Pressure remains constant", "Volume remains constant", "Entropy remains constant"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is true about the efficiency of a Carnot engine?",
+    "options": ["It is maximum when the temperature difference is greatest", "It is maximum when the system temperature is zero", "It increases with increasing entropy", "It is always 100% efficient"],
+    "answer": 0
+},
+{
+    "question": "What is the key characteristic of an isobaric process?",
+    "options": ["Pressure remains constant", "Volume remains constant", "Temperature remains constant", "Entropy remains constant"],
+    "answer": 0
+},
+{
+    "question": "Which of the following describes a real gas?",
+    "options": ["It has intermolecular forces and deviates from ideal behavior", "It has no intermolecular forces", "It obeys the ideal gas law at all temperatures and pressures", "It has an infinite volume"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between temperature and volume in Charles’s Law?",
+    "options": ["Volume is directly proportional to temperature", "Volume is inversely proportional to temperature", "Volume and temperature are unrelated", "Volume decreases with temperature"],
+    "answer": 0
+},
+{
+    "question": "In thermodynamics, what is the term for the energy transfer due to a temperature difference?",
+    "options": ["Heat", "Work", "Mass", "Entropy"],
+    "answer": 0
+},
+{
+    "question": "What is the purpose of the second law of thermodynamics?",
+    "options": ["To explain the direction of heat flow", "To define the relationship between pressure and temperature", "To calculate the work done by a system", "To define thermal equilibrium"],
+    "answer": 0
+},
+{
+    "question": "What happens during an isothermal compression of an ideal gas?",
+    "options": ["The temperature remains constant while the pressure increases", "The pressure remains constant while the temperature increases", "The volume increases while the temperature decreases", "The gas does no work"],
+    "answer": 0
+},
+{
+    "question": "What does the work-energy theorem state in thermodynamics?",
+    "options": ["The work done on a system is equal to the change in its energy", "The work done on a system is equal to its heat transfer", "The work done is inversely proportional to pressure", "The work done depends only on volume change"],
+    "answer": 0
+},
+{
+    "question": "What is the significance of the absolute zero temperature?",
+    "options": ["It is the temperature at which all molecular motion ceases", "It is the temperature at which water freezes", "It is the temperature at which gas molecules expand", "It is the temperature where the entropy reaches its maximum"],
+    "answer": 0
+},
+      {
+    "question": "What is the ideal gas law equation?",
+    "options": ["PV = nRT", "PV = nR", "PV = T", "PV = nT"],
+    "answer": 0
+},
+{
+    "question": "Which of the following represents an irreversible process?",
+    "options": ["An adiabatic expansion in a real gas", "Isothermal compression in an ideal gas", "Isobaric expansion of a gas", "Reversible isothermal expansion"],
+    "answer": 0
+},
+{
+    "question": "What is the first law of thermodynamics?",
+    "options": ["Energy cannot be created or destroyed, only transferred or converted", "The entropy of a system increases over time", "The temperature of a system remains constant", "Work and heat are interchangeable in any system"],
+    "answer": 0
+},
+{
+    "question": "What is meant by 'specific heat' in thermodynamics?",
+    "options": ["The amount of heat required to raise the temperature of a unit mass by one degree", "The total heat contained in a system", "The heat lost by a system", "The work done per unit volume"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a reversible process?",
+    "options": ["Isothermal expansion of an ideal gas", "Free expansion of a gas into a vacuum", "Compression of a gas at constant pressure", "Heat transfer through conduction"],
+    "answer": 0
+},
+{
+    "question": "What happens to the temperature of a gas during an adiabatic expansion?",
+    "options": ["The temperature decreases", "The temperature increases", "The temperature remains constant", "The temperature fluctuates rapidly"],
+    "answer": 0
+},
+{
+    "question": "What does the term 'enthalpy' refer to in thermodynamics?",
+    "options": ["The heat content of a system", "The total work done by a system", "The temperature of a system", "The entropy change of a system"],
+    "answer": 0
+},
+{
+    "question": "In a cyclic process, the net work done is equal to what?",
+    "options": ["The area enclosed by the cycle on a PV diagram", "The total heat energy input", "The change in internal energy", "The total entropy change"],
+    "answer": 0
+},
+{
+    "question": "What happens in an isothermal process?",
+    "options": ["Temperature remains constant", "Pressure remains constant", "Entropy remains constant", "Volume remains constant"],
+    "answer": 0
+},
+{
+    "question": "Which of the following describes the behavior of gases in the ideal gas model?",
+    "options": ["The gas particles do not interact and have negligible volume", "The gas particles interact through strong forces", "The gas particles occupy a fixed volume", "The gas particles are arranged in a regular pattern"],
+    "answer": 0
+},
+{
+    "question": "In which process does the internal energy of the system remain constant?",
+    "options": ["Adiabatic process", "Isochoric process", "Isothermal process", "Isobaric process"],
+    "answer": 0
+},
+{
+    "question": "What is the law of conservation of energy in thermodynamics?",
+    "options": ["Energy cannot be created or destroyed, only transformed", "Energy decreases with each transformation", "Energy increases with increasing temperature", "Energy is constant in closed systems"],
+    "answer": 0
+},
+{
+    "question": "What does the second law of thermodynamics state about entropy?",
+    "options": ["Entropy of an isolated system always increases", "Entropy remains constant in reversible processes", "Entropy decreases in isolated systems", "Entropy is independent of temperature"],
+    "answer": 0
+},
+{
+    "question": "What happens to the pressure of an ideal gas in an isochoric process?",
+    "options": ["It changes with temperature", "It remains constant", "It increases with volume", "It decreases with volume"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between heat and work in an isothermal process?",
+    "options": ["Heat and work are equal and opposite", "Heat is greater than work", "Work is greater than heat", "Heat and work are unrelated"],
+    "answer": 0
+},
+{
+    "question": "Which of the following represents a process with zero change in internal energy?",
+    "options": ["Adiabatic process", "Isothermal process", "Isochoric process", "Isobaric process"],
+    "answer": 0
+},
+{
+    "question": "What happens to the entropy in an isolated system according to the second law of thermodynamics?",
+    "options": ["Entropy increases", "Entropy decreases", "Entropy remains constant", "Entropy is unaffected by temperature"],
+    "answer": 0
+},
+{
+    "question": "What is the Carnot efficiency equation used to calculate?",
+    "options": ["The maximum possible efficiency of a heat engine", "The total energy output of a machine", "The temperature of a system", "The entropy change during a process"],
+    "answer": 0
+},
+{
+    "question": "In thermodynamics, what does a negative change in internal energy indicate?",
+    "options": ["The system has lost energy", "The system has gained energy", "The temperature has increased", "The system is in equilibrium"],
+    "answer": 0
+},
+      {
+    "question": "What does the term 'heat engine' refer to in thermodynamics?",
+    "options": ["A device that converts heat energy into work", "A device that increases the temperature of a system", "A process that maintains constant pressure", "A system that performs adiabatic expansion"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best describes the first law of thermodynamics?",
+    "options": ["Energy cannot be created or destroyed, only converted", "The total entropy of a system is always constant", "Energy is only transferred by heat or work", "The energy of a system decreases with time"],
+    "answer": 0
+},
+{
+    "question": "In a thermodynamic process, if the work done by the system is negative, what does this mean?",
+    "options": ["The system is doing work on its surroundings", "The surroundings are doing work on the system", "The internal energy of the system is increasing", "The system is gaining heat from the surroundings"],
+    "answer": 1
+},
+{
+    "question": "Which process occurs at constant pressure?",
+    "options": ["Isobaric", "Isochoric", "Isothermal", "Adiabatic"],
+    "answer": 0
+},
+{
+    "question": "What is a characteristic of an isothermal process?",
+    "options": ["Temperature remains constant", "Pressure remains constant", "Volume remains constant", "Energy is conserved in the form of heat"],
+    "answer": 0
+},
+{
+    "question": "What is the principle behind the operation of a refrigerator?",
+    "options": ["Absorbing heat from a cooler region and releasing it to a warmer region", "Releasing heat from a cooler region to maintain a constant temperature", "Increasing the internal energy of a substance", "Converting work into heat energy"],
+    "answer": 0
+},
+{
+    "question": "In which type of process does the volume of a gas remain constant?",
+    "options": ["Isochoric", "Isobaric", "Isothermal", "Adiabatic"],
+    "answer": 0
+},
+{
+    "question": "What does a decrease in the internal energy of a gas indicate?",
+    "options": ["The gas has done work on its surroundings", "Heat has been absorbed by the gas", "The gas has compressed", "The gas has undergone an isothermal process"],
+    "answer": 0
+},
+{
+    "question": "What does the term 'adiabatic' mean in thermodynamics?",
+    "options": ["No heat exchange with surroundings", "Constant volume", "Constant temperature", "Constant pressure"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of an isothermal process?",
+    "options": ["A gas expanding in a piston while maintaining a constant temperature", "A gas undergoing compression with increasing temperature", "A substance melting at its melting point", "A system with no heat exchange"],
+    "answer": 0
+},
+{
+    "question": "What is the primary factor that determines the efficiency of a heat engine?",
+    "options": ["The temperature difference between the hot and cold reservoirs", "The type of fuel used", "The pressure inside the engine", "The volume of the engine"],
+    "answer": 0
+},
+{
+    "question": "What happens to the entropy of the surroundings when heat is released by a system?",
+    "options": ["Entropy increases", "Entropy decreases", "Entropy remains constant", "Entropy fluctuates"],
+    "answer": 0
+},
+{
+    "question": "What is the primary function of a heat pump?",
+    "options": ["To transfer heat from a cold region to a hot region", "To absorb heat from the surroundings", "To perform work on the system", "To maintain constant temperature"],
+    "answer": 0
+},
+{
+    "question": "What occurs during the expansion of an ideal gas in an adiabatic process?",
+    "options": ["The temperature of the gas decreases", "The gas absorbs heat from its surroundings", "The temperature remains constant", "The pressure increases and volume decreases"],
+    "answer": 0
+},
+{
+    "question": "Which of the following best defines the concept of 'work' in thermodynamics?",
+    "options": ["Energy transferred due to a force acting over a distance", "Energy transferred through heat", "The internal energy of a system", "The change in entropy during a process"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a reversible process?",
+    "options": ["A slow expansion of an ideal gas", "A rapid compression of gas", "A spontaneous process", "An irreversible heat transfer"],
+    "answer": 0
+},
+{
+    "question": "What is the second law of thermodynamics often associated with?",
+    "options": ["Increase in entropy", "Decrease in temperature", "Increase in volume", "Constant energy transfer"],
+    "answer": 0
+},
+{
+    "question": "In a closed system, what happens when the temperature of the system is increased?",
+    "options": ["The system expands and does work", "The system contracts and absorbs work", "The internal energy decreases", "The volume remains unchanged"],
+    "answer": 0
+},
+{
+    "question": "What happens during an isobaric process?",
+    "options": ["Pressure remains constant while temperature and volume change", "Temperature remains constant while pressure and volume change", "Volume remains constant while temperature and pressure change", "Heat is exchanged with the surroundings"],
+    "answer": 0
+},
+      {
+    "question": "In thermodynamics, what does the term 'enthalpy' refer to?",
+    "options": ["Total heat content of a system", "Energy required for phase changes", "Work done by the system", "The rate at which energy is transferred"],
+    "answer": 0
+},
+{
+    "question": "Which of the following processes is an example of an irreversible process?",
+    "options": ["Rapid expansion of a gas", "Slow compression of a gas", "Isothermal expansion", "Adiabatic compression"],
+    "answer": 0
+},
+{
+    "question": "In an ideal gas, what happens to the pressure if the volume is doubled while the temperature remains constant?",
+    "options": ["Pressure is halved", "Pressure is doubled", "Pressure remains constant", "Pressure is quartered"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is true for a reversible adiabatic process?",
+    "options": ["The temperature of the system changes", "The entropy of the system remains constant", "Heat is exchanged with the surroundings", "The volume of the system remains constant"],
+    "answer": 0
+},
+{
+    "question": "What is the main limitation of the Carnot cycle?",
+    "options": ["It cannot be perfectly achieved in real-life engines", "It does not use heat to do work", "It operates at very high pressures", "It does not involve any form of energy conversion"],
+    "answer": 0
+},
+{
+    "question": "What is the relationship between the temperature and the kinetic energy of molecules in a substance?",
+    "options": ["Kinetic energy is directly proportional to temperature", "Kinetic energy is inversely proportional to temperature", "Kinetic energy is unrelated to temperature", "Kinetic energy decreases with temperature"],
+    "answer": 0
+},
+{
+    "question": "Which of the following defines the term 'absolute zero'?",
+    "options": ["The temperature at which all molecular motion ceases", "The point where all gases condense", "The lowest temperature a substance can reach", "The point where a substance changes state"],
+    "answer": 0
+},
+{
+    "question": "Which of the following does NOT affect the efficiency of a heat engine?",
+    "options": ["The temperature of the hot and cold reservoirs", "The type of working substance", "The speed of the engine", "The pressure within the system"],
+    "answer": 2
+},
+{
+    "question": "What is the purpose of the thermodynamic process called 'heat transfer'?",
+    "options": ["To change the temperature of the system", "To convert work into heat", "To balance pressure and temperature", "To perform adiabatic expansion or compression"],
+    "answer": 0
+},
+{
+    "question": "What happens in a system when the Gibbs free energy is negative?",
+    "options": ["The process is spontaneous", "The system is at equilibrium", "The process is reversible", "The process requires external energy"],
+    "answer": 0
+},
+{
+    "question": "In which type of process is both heat and work involved?",
+    "options": ["An isothermal process", "An isobaric process", "An adiabatic process", "A cyclic process"],
+    "answer": 3
+},
+{
+    "question": "In thermodynamics, what is 'entropy' a measure of?",
+    "options": ["The disorder or randomness of a system", "The total energy within a system", "The heat capacity of the system", "The work done by the system"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is true about the efficiency of a real heat engine?",
+    "options": ["It is always less than the efficiency of a Carnot engine", "It can exceed the efficiency of a Carnot engine", "It operates with 100% efficiency", "It requires no heat input"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a system undergoing an isothermal process?",
+    "options": ["A gas expanding at a constant temperature", "A gas expanding at constant pressure", "A gas expanding at constant volume", "A gas undergoing an adiabatic process"],
+    "answer": 0
+},
+{
+    "question": "What does the second law of thermodynamics state about the entropy of an isolated system?",
+    "options": ["Entropy will always increase", "Entropy will remain constant", "Entropy can decrease", "Entropy fluctuates depending on the process"],
+    "answer": 0
+},
+{
+    "question": "What happens to the temperature of a gas during an adiabatic expansion?",
+    "options": ["The temperature decreases", "The temperature increases", "The temperature remains constant", "The temperature fluctuates"],
+    "answer": 0
+},
+{
+    "question": "Which of the following describes an isochoric process?",
+    "options": ["The volume of the system remains constant", "The temperature of the system remains constant", "The pressure of the system remains constant", "The work done by the system is zero"],
+    "answer": 0
+},
+{
+    "question": "In thermodynamics, which of the following is a characteristic of an ideal gas?",
+    "options": ["It follows the ideal gas law under all conditions", "It does not exhibit any intermolecular forces", "It exists only at very high temperatures", "It has a constant internal energy"],
+    "answer": 1
+},
+{
+    "question": "What does the term 'reversible process' refer to in thermodynamics?",
+    "options": ["A process that can be undone by an infinitesimal change", "A process that results in a net increase in entropy", "A process that occurs at constant pressure", "A process where work is done without energy loss"],
+    "answer": 0
+},
+      {
+    "question": "Which of the following best describes the first law of thermodynamics?",
+    "options": ["Energy cannot be created or destroyed, only transferred or transformed", "Entropy always decreases in any process", "The temperature of a gas is directly proportional to its volume", "Heat energy cannot flow from a colder object to a hotter object without external work"],
+    "answer": 0
+},
+{
+    "question": "In a heat engine, the efficiency can be increased by",
+    "options": ["Increasing the temperature of the cold reservoir", "Increasing the temperature of the hot reservoir", "Decreasing the temperature of the hot reservoir", "Decreasing the temperature of the cold reservoir"],
+    "answer": 1
+},
+{
+    "question": "Which of the following is a characteristic of an isothermal process?",
+    "options": ["Temperature remains constant", "Pressure remains constant", "Volume remains constant", "Heat is not exchanged between the system and surroundings"],
+    "answer": 0
+},
+{
+    "question": "What is the main assumption behind the ideal gas law?",
+    "options": ["Gas particles occupy no volume", "Gas particles have no intermolecular forces", "Gas particles move randomly and collide elastically", "All of the above"],
+    "answer": 3
+},
+{
+    "question": "Which of the following describes an adiabatic process?",
+    "options": ["No heat is exchanged with the surroundings", "The volume of the system remains constant", "The pressure remains constant", "The temperature remains constant"],
+    "answer": 0
+},
+{
+    "question": "In thermodynamics, what does the term 'work' refer to?",
+    "options": ["The transfer of energy due to force acting over a distance", "The heat transferred from the system to the surroundings", "The change in the internal energy of the system", "The temperature change in the system"],
+    "answer": 0
+},
+{
+    "question": "In which process does the internal energy of the system remain constant?",
+    "options": ["Isochoric process", "Adiabatic process", "Isothermal process", "Isobaric process"],
+    "answer": 2
+},
+{
+    "question": "Which of the following processes is characterized by constant pressure?",
+    "options": ["Isothermal process", "Adiabatic process", "Isobaric process", "Isochoric process"],
+    "answer": 2
+},
+{
+    "question": "What is the term used to describe the amount of energy needed to raise the temperature of a substance?",
+    "options": ["Specific heat capacity", "Latent heat", "Work", "Enthalpy"],
+    "answer": 0
+},
+{
+    "question": "Which thermodynamic quantity is associated with the heat absorbed or released during a chemical reaction at constant pressure?",
+    "options": ["Enthalpy", "Entropy", "Free energy", "Internal energy"],
+    "answer": 0
+},
+{
+    "question": "What is the definition of 'heat' in thermodynamics?",
+    "options": ["Energy transferred due to a temperature difference", "The work done on a system", "The total internal energy of a system", "The change in pressure within a system"],
+    "answer": 0
+},
+{
+    "question": "What is the efficiency of a Carnot engine dependent on?",
+    "options": ["The temperature difference between the hot and cold reservoirs", "The speed of the engine", "The amount of work done", "The size of the engine"],
+    "answer": 0
+},
+{
+    "question": "In a cyclic process, the change in the internal energy of the system is",
+    "options": ["Zero", "Positive", "Negative", "Constant"],
+    "answer": 0
+},
+{
+    "question": "What happens to the pressure of an ideal gas if its volume is halved at constant temperature?",
+    "options": ["Pressure remains the same", "Pressure is doubled", "Pressure is halved", "Pressure increases by a factor of four"],
+    "answer": 1
+},
+{
+    "question": "In a reversible adiabatic process, which of the following is true?",
+    "options": ["The entropy of the system remains constant", "Heat is exchanged with the surroundings", "The temperature of the system changes", "The work done is equal to the heat transferred"],
+    "answer": 0
+},
+{
+    "question": "What does the second law of thermodynamics state about the entropy of an isolated system?",
+    "options": ["It will always increase or remain constant", "It will always decrease", "It will always remain constant", "It will decrease and then increase"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is an example of a real-world process that approximates a Carnot cycle?",
+    "options": ["A steam engine", "A car engine", "A refrigerator", "A heat pump"],
+    "answer": 0
+},
+{
+    "question": "What does the term 'free energy' refer to in thermodynamics?",
+    "options": ["The energy available to do work in a system", "The total energy of the system", "The energy lost to the surroundings", "The heat energy in a system"],
+    "answer": 0
+},
+{
+    "question": "Which of the following is a characteristic of an isochoric process?",
+    "options": ["The volume remains constant", "The temperature remains constant", "The pressure remains constant", "The heat exchanged is zero"],
+    "answer": 0
+}
+  ]
         };
         
         // Initialize the quiz
